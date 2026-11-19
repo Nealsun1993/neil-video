@@ -1,3 +1,5 @@
+import type {Format} from './layout';
+import type {Rhythm} from './timing';
 // episode.json 的结构。新一期视频 = public/episodes/<id>/ 下的 episode.json + envelope.json + 配音 + 素材。
 export type Caption = {text: string; start: number; end: number};
 export type Chapter = {at: number; label: string; tab?: string}; // tab：方案 C 标签栏上的短名
@@ -7,9 +9,10 @@ export type Shot = {
   template: string; // 卡片：host/tools/evidence/steps/voice/media/outro；App：app.modules/app.browser/app.toggles/app.timeline/app.export
   start: number;
   end: number;
+  rhythm?: Rhythm;
   /** 顶部标题区；host 模板不显示 */
   header?: {title: string; sub?: string};
-  /** 深色镜头（只给结尾用） */
+  /** 深色镜头（展示设计可用于章节强调） */
   dark?: boolean;
   props: any;
 };
@@ -18,6 +21,13 @@ export type Episode = {
   id: string;
   title: string;
   duration: number;
+  format?: Format;
+  rhythm?: Rhythm;
+  presentation?: 'workbench' | 'showcase' | 'pixel';
+  _words?: [string, number][];
+  audioOffset?: number;
+  sfx?: {src:string; volume?:number};
+  music?: {src: string; volume?: number; voiceVolume?: number};
   audio?: string;          // 配音（相对本期目录）
   envelope: string;        // 响度包络 json（scripts/envelope.py 生成）
   voiceStart?: number;     // 第一个字的时间

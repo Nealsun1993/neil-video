@@ -1,0 +1,18 @@
+{
+  "title":"口播工作台 · 一分钟像素概念片",
+  "duration":60,
+  "audio":"episodes/pixel-minute/mix.m4a",
+  "scenes":[
+    {"start":0,"end":4,"kind":"hook","label":"TALK-WORKBENCH / PIXEL FILM","title":"一句话，","accent":"带出下一步。","detail":"让画面跟着讲解走"},
+    {"start":4,"end":8,"kind":"split","label":"01 / FROM CLUTTER TO FLOW","title":"素材很多，","accent":"顺序要清楚。","detail":"文案 · 配音 · 画面"},
+    {"start":8,"end":12,"kind":"voice","label":"02 / START WITH YOUR VOICE","title":"先有声音，","accent":"再安排画面。","detail":"真人录音或已确认配音"},
+    {"start":12,"end":16,"kind":"timeline","label":"03 / TIMING IS THE SCRIPT","title":"动作，","accent":"落在关键词上。","detail":"按真实时间安排出现、连接与收束"},
+    {"start":16,"end":29.5,"kind":"demo","label":"04 / WORKFLOW IN MOTION","title":"口播驱动","accent":"工作流演示","detail":"示意界面 / 使用现有演示配音"},
+    {"start":29.5,"end":34,"kind":"devices","label":"05 / TWO FORMATS","title":"同一段内容，","accent":"两种画幅。","detail":"横屏分栏，竖屏重新组织"},
+    {"start":34,"end":39,"kind":"styles","label":"06 / TWO VISUAL LANGUAGES","title":"基础版式，","accent":"像素表达。","detail":"内容与时间共用，视觉独立设计"},
+    {"start":39,"end":44,"kind":"editor","label":"07 / KEEP IT EDITABLE","title":"换一句，","accent":"继续往下做。","detail":"文字、配音、时间与版式留在本地"},
+    {"start":44,"end":49,"kind":"render","label":"08 / PREVIEW TO EXPORT","title":"先预览，","accent":"再导出。","detail":"效果示意 / 每次导出另存新文件"},
+    {"start":49,"end":54,"kind":"payoff","label":"09 / ONE CONNECTED STORY","title":"从零散步骤，","accent":"到完整叙事。","detail":"声音 → 模块 → 工作流 → 成片"},
+    {"start":54,"end":60,"kind":"end","label":"TALK-WORKBENCH","title":"口播工作台","accent":"让讲解，有画面。","detail":"github.com/Nealsun1993/talk-workbench"}
+  ]
+}

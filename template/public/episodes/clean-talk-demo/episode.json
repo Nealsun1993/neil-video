@@ -1,0 +1,272 @@
+{
+ "id": "clean-talk-demo",
+ "title": "纯白口播版 · 两款文案技能演示",
+ "style": "clean",
+ "duration": 30,
+ "brand": "文案工坊",
+ "audio": "narration.m4a",
+ "audioOffset": 0,
+ "music": {
+  "src": "/clean-ui-workflow/music.m4a",
+  "volume": 0.25,
+  "voiceVolume": 0.08
+ },
+ "sources": {},
+ "clips": {
+  "dbsCard": {
+   "kind": "card",
+   "label": "选题与标题",
+   "title": "先定选题，再出标题",
+   "badge": "dbs Skill",
+   "lines": [
+    "拉出四个受众方向",
+    "一屏出标题封面开头"
+   ]
+  },
+  "hookCard": {
+   "kind": "card",
+   "label": "黄金开头",
+   "title": "前十秒留住观众",
+   "badge": "黄金开头",
+   "lines": [
+    "追问真实经历与数字",
+    "拒绝空洞开场白"
+   ]
+  },
+  "humanCard": {
+   "kind": "card",
+   "label": "洗净 AI 味",
+   "title": "还原真人说话语气",
+   "badge": "Humanizer",
+   "lines": [
+    "对照机器特征逐句清洗",
+    "对齐个人用词与句长"
+   ]
+  },
+  "flowCard": {
+   "kind": "card",
+   "label": "双技能成稿",
+   "title": "定题立项 + 真人润色",
+   "badge": "成稿预览",
+   "lines": [
+    "标题封面吸引点击",
+    "正文白话留住读者"
+   ]
+  }
+ },
+ "captions": [
+  {
+   "text": "所有做自媒体、写文案的人",
+   "start": 0.25,
+   "end": 2.138
+  },
+  {
+   "text": "都该把这两个神级 Skill",
+   "start": 2.138,
+   "end": 4.006
+  },
+  {
+   "text": "装进你的 Agent 里",
+   "start": 4.006,
+   "end": 5.635
+  },
+  {
+   "text": "一个帮你定出有人想点的标题",
+   "start": 5.915,
+   "end": 8.273
+  },
+  {
+   "text": "封面和前十秒开头",
+   "start": 8.273,
+   "end": 9.924
+  },
+  {
+   "text": "一个帮你把整篇稿子的 AI 味洗干净",
+   "start": 9.924,
+   "end": 12.871
+  },
+  {
+   "text": "第一个，专门管标题",
+   "start": 13.471,
+   "end": 15.297
+  },
+  {
+   "text": "封面和开头的 dbs Skill",
+   "start": 15.297,
+   "end": 17.962
+  },
+  {
+   "text": "国内自媒体博主开源的项目",
+   "start": 17.962,
+   "end": 20.048
+  },
+  {
+   "text": "它不会上来就硬编标题",
+   "start": 20.328,
+   "end": 22.084
+  },
+  {
+   "text": "先帮你定选题",
+   "start": 22.084,
+   "end": 23.403
+  },
+  {
+   "text": "第二个，Humanizer，专门去 AI 味",
+   "start": 23.694,
+   "end": 26.382
+  },
+  {
+   "text": "觉得有用，记得点赞、收藏、关注",
+   "start": 26.636,
+   "end": 29.473
+  }
+ ],
+ "shots": [
+  {
+   "id": "s01",
+   "template": "clean.opening",
+   "start": 0,
+   "end": 3.9,
+   "props": {
+    "kicker": "AI 写作工作流",
+    "icons": [
+     "text",
+     "spark",
+     "layers"
+    ],
+    "iconsAt": 1.5
+   }
+  },
+  {
+   "id": "s02",
+   "template": "clean.chapter",
+   "start": 3.9,
+   "end": 5.8,
+   "props": {
+    "badge": "2 SKILLS",
+    "title": "装进你的 Agent",
+    "subtitle": "从吸引点击的开头，到耐读的真人白话"
+   }
+  },
+  {
+   "id": "s03",
+   "template": "clean.board",
+   "start": 5.8,
+   "end": 13.2,
+   "props": {
+    "window": "写作流程编排",
+    "heading": "双技能核心分工",
+    "action": "加入流程",
+    "leftTitle": "核心环节",
+    "rightTitle": "能力卡片",
+    "trackLabel": "写作流水线",
+    "text": "两步覆盖点击率与完读率",
+    "items": [
+     {
+      "keyword": "想点的标题",
+      "media": "dbsCard",
+      "icon": "spark",
+      "at": 5.92
+     },
+     {
+      "keyword": "前十秒开头",
+      "media": "hookCard",
+      "icon": "preview",
+      "at": 8.28
+     },
+     {
+      "keyword": "洗净 AI 味",
+      "media": "humanCard",
+      "icon": "text",
+      "at": 9.93
+     }
+    ],
+    "cue": "三大环节已排入写作流水线"
+   }
+  },
+  {
+   "id": "s04",
+   "template": "clean.drop",
+   "start": 13.2,
+   "end": 20.2,
+   "props": {
+    "window": "dbs Skill · 选题立项",
+    "heading": "选题与开头模块",
+    "action": "导入初稿",
+    "icon": "text",
+    "mode": "list",
+    "fileName": "dbs-skill.md",
+    "hint": "拖入初稿或主题方向",
+    "dropAt": 15.3,
+    "items": [
+     "受众切角扩展",
+     "多风格标题组",
+     "黄金十秒开头"
+    ],
+    "status": "开源模块已加载",
+    "resultLabel": "开源项目",
+    "result": "国内创作者开源，专门负责标题、封面与开头",
+    "resultAt": 18
+   }
+  },
+  {
+   "id": "s05",
+   "template": "clean.preview",
+   "start": 20.2,
+   "end": 23.55,
+   "props": {
+    "window": "先定选题 · 一屏交付",
+    "heading": "选题方案预览",
+    "action": "确认选题",
+    "media": "flowCard",
+    "caption": "不硬编标题，先帮你定选题",
+    "switchAt": 21.75,
+    "formats": [
+     [
+      "受众切角",
+      "4 个选题方向"
+     ],
+     [
+      "一屏交付",
+      "标题 · 封面 · 开头"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "s06",
+   "template": "clean.edit",
+   "start": 23.55,
+   "end": 26.6,
+   "props": {
+    "window": "Humanizer · 去机器味",
+    "heading": "文风对照润色",
+    "action": "一键去味",
+    "leftTitle": "润色前",
+    "rightTitle": "真人语气预览",
+    "modalTitle": "清洗机器套话",
+    "applyLabel": "应用润色",
+    "before": "赋能内容生态，打造高转化闭环",
+    "after": "把话说明白，像真人一样交流",
+    "openAt": 24.1,
+    "applyAt": 25.2,
+    "cue": "已对齐真人表达习惯"
+   }
+  },
+  {
+   "id": "s07",
+   "template": "clean.closing",
+   "start": 26.6,
+   "end": 30,
+   "props": {
+    "tagline": "好标题吸引点击，真白话留住读者",
+    "search": "点赞 · 收藏 · 关注",
+    "searchAt": 27.3
+   }
+  }
+ ],
+ "sfx": {
+  "src": "sfx.m4a",
+  "volume": 0.5
+ }
+}

@@ -5,3 +5,26 @@ template/out/
 template/public/fonts/
 __pycache__/
 *.pyc
+
+# 可再生成的开发示例配乐母带
+template/public/episodes/hybrid-demo/score.wav
+
+# 本地编辑缓存与每次新导出
+template/exports/
+.venv/
+检查记录/本地渲染/
+
+# 本地成片由完整编辑包备份，避免误提交生成视频
+成片/
+
+# 蓝光展廊卡片素材：由成片目录复制，可重新生成
+template/public/blue-gallery/media/
+
+# 虹彩对话版卡片素材：由成片目录复制，可重新生成
+template/public/prism-promo/media/
+
+# 纯白镜头版手机里的竖屏成片：由成片目录复制
+template/public/clean-ui-workflow/media/
+
+# 历史五风格合集旧录屏（已停用，避免仓库臃肿）
+template/public/reel/

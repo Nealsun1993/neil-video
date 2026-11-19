@@ -1,0 +1,271 @@
+{
+  "id": "paper-talk-demo",
+  "title": "纸感排印口播版 · 两个文案 Skill (30s)",
+  "style": "paper",
+  "format": "landscape",
+  "duration": 30.0,
+  "brand": "文案改造台",
+  "tagline": "好标题引点击，真白话留读者。",
+  "texture": "定题去味真话",
+  "roles": [
+    "定选题",
+    "好标题",
+    "前十秒",
+    "去套话",
+    "真人味",
+    "核数字"
+  ],
+  "audio": "narration.m4a",
+  "audioOffset": 0.0,
+  "music": {
+    "src": "/paper-line/music.m4a",
+    "volume": 0.26,
+    "voiceVolume": 0.07
+  },
+  "sfx": {
+    "src": "sfx.m4a",
+    "volume": 0.45
+  },
+  "captions": [
+    {
+      "text": "所有做自媒体、写文案的人",
+      "start": 0.25,
+      "end": 2.138
+    },
+    {
+      "text": "都该把这两个神级 Skill",
+      "start": 2.138,
+      "end": 4.006
+    },
+    {
+      "text": "装进你的 Agent 里",
+      "start": 4.006,
+      "end": 5.635
+    },
+    {
+      "text": "一个帮你定出有人想点的标题",
+      "start": 5.915,
+      "end": 8.273
+    },
+    {
+      "text": "封面和前十秒开头",
+      "start": 8.273,
+      "end": 9.924
+    },
+    {
+      "text": "一个帮你把整篇稿子的 AI 味洗干净",
+      "start": 9.924,
+      "end": 12.871
+    },
+    {
+      "text": "第一个，专门管标题",
+      "start": 13.471,
+      "end": 15.297
+    },
+    {
+      "text": "封面和开头的 dbs Skill",
+      "start": 15.297,
+      "end": 17.962
+    },
+    {
+      "text": "国内自媒体博主开源的项目",
+      "start": 17.962,
+      "end": 20.048
+    },
+    {
+      "text": "它不会上来就硬编标题",
+      "start": 20.328,
+      "end": 22.084
+    },
+    {
+      "text": "先帮你定选题",
+      "start": 22.084,
+      "end": 23.403
+    },
+    {
+      "text": "第二个，Humanizer，专门去 AI 味",
+      "start": 23.694,
+      "end": 26.382
+    },
+    {
+      "text": "觉得有用，记得点赞、收藏、关注",
+      "start": 26.636,
+      "end": 29.473
+    }
+  ],
+  "shots": [
+    {
+      "id": "s01",
+      "template": "paper.intro",
+      "start": 0.0,
+      "end": 2.1,
+      "props": {
+        "title": "两个文案神器",
+        "sub": "AI WRITING WORKFLOW",
+        "roles": [
+          "定选题",
+          "前十秒",
+          "去套话"
+        ]
+      }
+    },
+    {
+      "id": "s02",
+      "template": "paper.line",
+      "start": 2.1,
+      "end": 9.9,
+      "props": {
+        "kicker": "PART 01 · 抓住点击",
+        "line": [
+          {
+            "text": "装进 Agent，定出"
+          },
+          {
+            "text": "想点",
+            "style": "heavy",
+            "tag": "抓眼球"
+          },
+          {
+            "text": "的标题封面，立住"
+          },
+          {
+            "text": "前十秒",
+            "style": "voice",
+            "tag": "黄金开头"
+          },
+          {
+            "text": "，自然"
+          },
+          {
+            "text": "留人",
+            "style": "breathe",
+            "tag": "高完播"
+          },
+          {
+            "text": "。"
+          }
+        ],
+        "swarm": false
+      }
+    },
+    {
+      "id": "s03",
+      "template": "paper.wall",
+      "start": 9.9,
+      "end": 13.4,
+      "props": {
+        "word": "去AI味",
+        "texture": "真白话",
+        "roles": [
+          "砍排比",
+          "删套话",
+          "换白话",
+          "核事实",
+          "真语气",
+          "松弛感"
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "template": "paper.line",
+      "start": 13.4,
+      "end": 20.2,
+      "props": {
+        "kicker": "SKILL 01 · dbs Skill",
+        "line": [
+          {
+            "text": "开源 dbs 管好"
+          },
+          {
+            "text": "标题封面",
+            "style": "pixel",
+            "tag": "定选题"
+          },
+          {
+            "text": "，拒绝"
+          },
+          {
+            "text": "硬编",
+            "style": "light",
+            "tag": "不凑数"
+          },
+          {
+            "text": "，一屏"
+          },
+          {
+            "text": "配齐",
+            "style": "lean",
+            "tag": "快准稳"
+          },
+          {
+            "text": "。"
+          }
+        ],
+        "roles": [
+          "定选题",
+          "好标题",
+          "封面字",
+          "前十秒",
+          "开源库",
+          "多受众"
+        ],
+        "swarm": true
+      }
+    },
+    {
+      "id": "s05",
+      "template": "paper.poster",
+      "start": 20.2,
+      "end": 23.6,
+      "dark": true,
+      "props": {
+        "kicker": "STEP 01 · 定选题优先",
+        "lines": [
+          "不硬编，",
+          "先帮你",
+          "定选题。"
+        ],
+        "roles": [
+          "受众切角",
+          "真实细节",
+          "一屏配齐",
+          "黄金开头"
+        ]
+      }
+    },
+    {
+      "id": "s06",
+      "template": "paper.block",
+      "start": 23.6,
+      "end": 26.6,
+      "dark": true,
+      "props": {
+        "label": "SKILL 02 · Humanizer",
+        "rows": [
+          "去套话",
+          "洗AI味",
+          "像真人"
+        ],
+        "roles": [
+          "删连接词",
+          "破三段论",
+          "对齐语料",
+          "核对数字",
+          "保留观点",
+          "真人温度"
+        ]
+      }
+    },
+    {
+      "id": "s07",
+      "template": "paper.outro",
+      "start": 26.6,
+      "end": 30.0,
+      "props": {
+        "line": "点赞 · 收藏 · 关注",
+        "tagline": "定好选题开头，洗净机器套话。"
+      }
+    }
+  ]
+}

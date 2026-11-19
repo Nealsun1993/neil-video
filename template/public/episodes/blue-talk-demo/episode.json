@@ -1,0 +1,361 @@
+{
+ "id": "blue-talk-demo",
+ "title": "蓝光口播版 · 演示",
+ "style": "blue",
+ "duration": 30,
+ "brand": "口播工作台",
+ "audio": "/episodes/demo/narration.m4a",
+ "audioOffset": 1.2,
+ "music": {
+  "src": "/blue-gallery/music.m4a",
+  "volume": 0.3,
+  "voiceVolume": 0.09
+ },
+ "clips": {
+  "hybridDark": {
+   "kind": "card",
+   "label": "简约工作台",
+   "title": "场景与工作台交替",
+   "badge": "STYLE 01",
+   "lines": [
+    "概念场景讲思路",
+    "工作台演操作步骤"
+   ]
+  },
+  "hybridWork": {
+   "kind": "card",
+   "label": "工作台演示",
+   "title": "按讲解加入模块",
+   "badge": "WORKFLOW",
+   "lines": [
+    "说到哪个工具加哪个",
+    "时间轴对齐真实配音"
+   ]
+  },
+  "clean": {
+   "kind": "card",
+   "label": "纯白产品演示",
+   "title": "真实页面聚光抬卡",
+   "badge": "STYLE 05",
+   "lines": [
+    "聚光关键原句",
+    "抬起原文卡片清晰可读"
+   ]
+  },
+  "prismColor": {
+   "kind": "card",
+   "label": "虹彩产品演示",
+   "title": "虹彩流体对话流",
+   "badge": "STYLE 03",
+   "lines": [
+    "问答气泡顶边锁死",
+    "预览窗与要点无缝承接"
+   ]
+  },
+  "prismCard": {
+   "kind": "card",
+   "label": "虹彩确认卡",
+   "title": "原文卡片直观呈现",
+   "badge": "QUOTE",
+   "lines": [
+    "截图小字不硬放大",
+    "原文重排成高对比卡片"
+   ]
+  },
+  "story": {
+   "kind": "card",
+   "label": "连续叙事",
+   "title": "从关键词到工作流",
+   "badge": "STORY",
+   "lines": [
+    "上一镜卡片原地展开",
+    "完成连接后收束结果"
+   ]
+  },
+  "cleanPreview": {
+   "kind": "card",
+   "label": "纯白预览",
+   "title": "横竖双画幅自适应",
+   "badge": "16:9 / 3:4",
+   "lines": [
+    "三脚架零晃动镜头",
+    "重点单向推近稳停"
+   ]
+  },
+  "cleanImport": {
+   "kind": "card",
+   "label": "导入文稿",
+   "title": "一条配音驱动全片",
+   "badge": "STEP 01",
+   "lines": [
+    "自动提取字级时间戳",
+    "字幕与动作毫秒同步"
+   ]
+  }
+ },
+ "captions": [
+  {
+   "text": "这是口播工作台的演示",
+   "start": 1.2,
+   "end": 2.85
+  },
+  {
+   "text": "说到一个工具",
+   "start": 3.5,
+   "end": 4.25
+  },
+  {
+   "text": "它就被加进清单",
+   "start": 4.6,
+   "end": 5.7
+  },
+  {
+   "text": "文案",
+   "start": 6.2,
+   "end": 6.7
+  },
+  {
+   "text": "配音",
+   "start": 6.84,
+   "end": 7.35
+  },
+  {
+   "text": "画面",
+   "start": 7.6,
+   "end": 7.95
+  },
+  {
+   "text": "再由一个统筹者",
+   "start": 8.5,
+   "end": 9.55
+  },
+  {
+   "text": "把它们连起来",
+   "start": 9.6,
+   "end": 10.65
+  },
+  {
+   "text": "真实页面放进内置浏览器",
+   "start": 11.15,
+   "end": 13.0
+  },
+  {
+   "text": "说到关键句的时候聚光",
+   "start": 13.08,
+   "end": 14.9
+  },
+  {
+   "text": "再把原文抬成卡片",
+   "start": 15.25,
+   "end": 16.7
+  },
+  {
+   "text": "能力和检查项",
+   "start": 17.3,
+   "end": 18.3
+  },
+  {
+   "text": "说到哪项就打开哪项",
+   "start": 18.6,
+   "end": 20.0
+  },
+  {
+   "text": "光标点击",
+   "start": 20.3,
+   "end": 21.05
+  },
+  {
+   "text": "相机跟随",
+   "start": 21.26,
+   "end": 22.05
+  },
+  {
+   "text": "承接换页",
+   "start": 22.2,
+   "end": 22.95
+  },
+  {
+   "text": "运动模糊",
+   "start": 23.12,
+   "end": 23.7
+  },
+  {
+   "text": "四项都打开",
+   "start": 24.3,
+   "end": 25.15
+  },
+  {
+   "text": "这一页就讲完了",
+   "start": 25.5,
+   "end": 26.8
+  }
+ ],
+ "shots": [
+  {
+   "id": "s01",
+   "template": "blue.title",
+   "start": 0,
+   "end": 3.3,
+   "props": {
+    "kicker": "演示",
+    "lines": [
+     "口播工作台"
+    ]
+   }
+  },
+  {
+   "id": "s02",
+   "template": "blue.feature",
+   "start": 3.3,
+   "end": 6.0,
+   "props": {
+    "items": [
+     {
+      "media": "hybridWork",
+      "lines": [
+       "说到一个工具，",
+       "就加进清单。"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "s03",
+   "template": "blue.row",
+   "start": 6.0,
+   "end": 8.3,
+   "props": {
+    "cards": [
+     {
+      "media": "cleanImport",
+      "label": "文案",
+      "at": 6.2
+     },
+     {
+      "media": "hybridDark",
+      "label": "配音",
+      "at": 6.84
+     },
+     {
+      "media": "prismColor",
+      "label": "画面",
+      "at": 7.6
+     }
+    ]
+   }
+  },
+  {
+   "id": "s04",
+   "template": "blue.title",
+   "start": 8.3,
+   "end": 10.9,
+   "props": {
+    "lines": [
+     "一个统筹者，",
+     "把它们连起来。"
+    ]
+   }
+  },
+  {
+   "id": "s05",
+   "template": "blue.push",
+   "start": 10.9,
+   "end": 14.95,
+   "props": {
+    "media": "clean"
+   }
+  },
+  {
+   "id": "s06",
+   "template": "blue.feature",
+   "start": 14.95,
+   "end": 17.1,
+   "props": {
+    "items": [
+     {
+      "media": "prismCard",
+      "lines": [
+       "把原文，",
+       "抬成卡片。"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "s07",
+   "template": "blue.wall",
+   "start": 17.1,
+   "end": 20.1,
+   "props": {
+    "cards": [
+     "clean",
+     "hybridDark",
+     "prismColor",
+     "story",
+     "prismCard",
+     "hybridWork",
+     "cleanPreview",
+     "cleanImport"
+    ]
+   }
+  },
+  {
+   "id": "s08",
+   "template": "blue.editor",
+   "start": 20.1,
+   "end": 24.1,
+   "props": {
+    "window": "口播工作台 · 动效",
+    "heading": "这一页",
+    "styles": [
+     {
+      "name": "光标点击",
+      "media": "hybridWork"
+     },
+     {
+      "name": "相机跟随",
+      "media": "cleanPreview",
+      "at": 21.26
+     },
+     {
+      "name": "承接换页",
+      "media": "prismColor",
+      "at": 22.2
+     },
+     {
+      "name": "运动模糊",
+      "media": "hybridDark",
+      "at": 23.12
+     }
+    ],
+    "fields": [
+     [
+      "画幅",
+      "16:9"
+     ],
+     [
+      "字幕",
+      "底部居中"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "s09",
+   "template": "blue.outro",
+   "start": 24.1,
+   "end": 30,
+   "props": {
+    "line": "四项都打开。",
+    "title": "这一页讲完了",
+    "titleAt": 26.6
+   }
+  }
+ ],
+ "sfx": {
+  "src": "sfx.m4a",
+  "volume": 0.5
+ }
+}

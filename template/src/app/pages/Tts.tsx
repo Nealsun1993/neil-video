@@ -73,7 +73,7 @@ export const Tts: AppTemplate = {
   focus: (shot) => {
     const p = shot.props;
     const f: any[] = [{at: shot.start, rect: [PAD - 20, 200, CW + 40, 380], scale: 1.12}, {at: p.button.at - 0.4, rect: null}];
-    if (p.voice) f.push({at: p.voice.at - 0.35, rect: [PAD - 20, OPT_Y - 60, CW + 40, 520], scale: 1.15}, {at: p.voice.at + 1.3, rect: null});
+    if (p.voice) f.push({at: p.voice.at - 0.35, rect: [PAD - 20, OPT_Y - 60, CW + 40, 520], scale: 1.15});
     return f;
   },
 };

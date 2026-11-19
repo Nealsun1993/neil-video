@@ -197,9 +197,10 @@ hero 版式的 `kind` 还支持 `spread`（几张竖图并排，写 `srcs`）、
 | 字段 | 说明 |
 |---|---|
 | `id` / `title` / `duration` | 期名、标题、总时长（秒） |
+| `format` | 可选，`"landscape"`（1920×1080 横屏）、`"3:4"`（1080×1440 竖屏主标准）或 `"portrait"`（1080×1920 旧版 9:16 兼容） |
 | `audio` / `envelope` | 配音和响度包络，相对本期目录 |
 | `voiceStart` | 第一个字的时间 |
-| `app.title` | 窗口标题栏上的名字，默认「口播工作台」 |
+| `app.title` | 窗口标题栏上的名字，由当期配置自定义（未填时用通用名） |
 | `backdrop` | `{"kind": "grid"}` 点阵加游走蓝光（默认用这个） |
 | `chapters` | `[{"at", "label", "tab"}]`，带 `tab` 的会出现在标签栏 |
 | `captions` | `[{"text", "start", "end"}]` 字幕 |

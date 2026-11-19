@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-02",
+  "skills": {
+    "bs-spotify-style-og": "1.0.2",
+    "bs-nike-style-og": "1.0.2",
+    "bs-slack-style-og": "1.0.2",
+    "bs-wise-style-og": "1.0.2"
+  },
+  "imageRoute": "built-in image_gen",
+  "generations": 2,
+  "falTasks": [],
+  "people": "fictional original people, not users or endorsements",
+  "listener": {
+    "file": "listener.png",
+    "prompt": "listener-prompt.txt",
+    "size": [
+      1223,
+      1286
+    ],
+    "alpha": true
+  },
+  "filmmaker": {
+    "file": "filmmaker.png",
+    "prompt": "filmmaker-prompt.txt",
+    "size": [
+      1024,
+      1536
+    ],
+    "alpha": true
+  },
+  "proof": {
+    "og-landscape.png": "Original OG composition at 10 seconds",
+    "ascii-portrait.jpg": "Original checked HalftoneAsciiPortrait movie at 22.5 seconds"
+  },
+  "music": "Existing original 120BPM OG score retained"
+}

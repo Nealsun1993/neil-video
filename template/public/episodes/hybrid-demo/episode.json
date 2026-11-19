@@ -1,0 +1,425 @@
+{
+  "id": "hybrid-demo",
+  "title": "讲解 × 展示 · 双画幅样例",
+  "duration": 34.474,
+  "audio": "/episodes/demo/narration.m4a",
+  "envelope": "envelope.json",
+  "voiceStart": 4.05,
+  "app": {
+    "title": "口播工作台"
+  },
+  "backdrop": {
+    "kind": "plain"
+  },
+  "chapters": [
+    {
+      "at": 6.3,
+      "label": "工作流",
+      "tab": "工作流"
+    },
+    {
+      "at": 13.52,
+      "label": "真实页面",
+      "tab": "真实页面"
+    },
+    {
+      "at": 19.58,
+      "label": "动效"
+    }
+  ],
+  "captions": [
+    {
+      "text": "这是口播工作台的演示",
+      "start": 4.0,
+      "end": 5.65
+    },
+    {
+      "text": "说到一个工具",
+      "start": 6.3,
+      "end": 7.05
+    },
+    {
+      "text": "它就被加进清单",
+      "start": 7.4,
+      "end": 8.5
+    },
+    {
+      "text": "文案",
+      "start": 9.0,
+      "end": 9.5
+    },
+    {
+      "text": "配音",
+      "start": 9.64,
+      "end": 10.15
+    },
+    {
+      "text": "画面",
+      "start": 10.4,
+      "end": 10.75
+    },
+    {
+      "text": "再由一个统筹者",
+      "start": 11.3,
+      "end": 12.35
+    },
+    {
+      "text": "把它们连起来",
+      "start": 12.4,
+      "end": 13.45
+    },
+    {
+      "text": "真实页面放进内置浏览器",
+      "start": 13.95,
+      "end": 15.8
+    },
+    {
+      "text": "说到关键句的时候聚光",
+      "start": 15.88,
+      "end": 17.7
+    },
+    {
+      "text": "再把原文抬成卡片",
+      "start": 18.05,
+      "end": 19.5
+    },
+    {
+      "text": "能力和检查项",
+      "start": 20.1,
+      "end": 21.1
+    },
+    {
+      "text": "说到哪项就打开哪项",
+      "start": 21.4,
+      "end": 22.8
+    },
+    {
+      "text": "光标点击",
+      "start": 23.1,
+      "end": 23.85
+    },
+    {
+      "text": "相机跟随",
+      "start": 24.06,
+      "end": 24.85
+    },
+    {
+      "text": "承接换页",
+      "start": 25.0,
+      "end": 25.75
+    },
+    {
+      "text": "运动模糊",
+      "start": 25.92,
+      "end": 26.5
+    },
+    {
+      "text": "四项都打开",
+      "start": 27.1,
+      "end": 27.95
+    },
+    {
+      "text": "这一页就讲完了",
+      "start": 28.3,
+      "end": 29.6
+    }
+  ],
+  "shots": [
+    {
+      "id": "beat-intro",
+      "template": "showcase",
+      "start": 0,
+      "end": 4,
+      "rhythm": {
+        "mode": "beat",
+        "bpm": 120
+      },
+      "props": {
+        "kicker": "口播工作台 / HYBRID",
+        "title": "配音确定了，画面怎么跟上？",
+        "sub": "让操作、重点和镜头，都有时间依据。",
+        "revealAt": {
+          "beat": 1
+        },
+        "items": [],
+        "variant": "chapter",
+        "titleLines": [
+          "配音确定了，",
+          "画面怎么跟上？"
+        ],
+        "accent": "coral",
+        "portraitFlow": [
+          "配音",
+          "关键词",
+          "画面"
+        ]
+      },
+      "dark": true
+    },
+    {
+      "id": "voice-outline",
+      "template": "showcase",
+      "start": 4,
+      "end": 6.3,
+      "props": {
+        "kicker": "三个部分",
+        "title": "口播工作台，跟着讲解走。",
+        "items": [
+          {
+            "title": "工作流",
+            "icon": "stack",
+            "at": 4.25
+          },
+          {
+            "title": "真实页面",
+            "icon": "browser",
+            "at": 4.7
+          },
+          {
+            "title": "动效",
+            "icon": "cursor",
+            "at": 5.15
+          }
+        ],
+        "titleLines": [
+          "口播工作台，",
+          "跟着讲解走。"
+        ]
+      }
+    },
+    {
+      "id": "flow",
+      "template": "app.modules",
+      "start": 6.3,
+      "end": 13.52,
+      "props": {
+        "title": "口播工作流",
+        "sub": "说到哪个，加哪个",
+        "items": [
+          {
+            "name": "文案",
+            "role": "先确认，再往下做",
+            "icon": "file-text",
+            "at": 9.0
+          },
+          {
+            "name": "配音",
+            "role": "真人录音或 TTS",
+            "icon": "microphone",
+            "at": 9.64
+          },
+          {
+            "name": "画面",
+            "role": "跟着配音的时间走",
+            "icon": "film-slate",
+            "at": 10.4
+          }
+        ],
+        "orchestrator": {
+          "name": "统筹者",
+          "role": "把三步连起来",
+          "icon": "terminal-window",
+          "at": 11.8
+        },
+        "launch": {
+          "from": {
+            "showcaseItem": 0
+          },
+          "r": 30
+        },
+        "editorial": {
+          "label": "工作台 · 把步骤演出来",
+          "lines": [
+            "讲操作，",
+            "进入工作台。"
+          ],
+          "sub": "文案、配音、画面，按讲解顺序逐个加入。",
+          "tag": "WORKFLOW / 按讲解展开"
+        }
+      },
+      "header": {
+        "title": "说到哪个，加哪个",
+        "sub": "文案、配音、画面，由原有工作台组件组织。"
+      }
+    },
+    {
+      "id": "page",
+      "template": "app.browser",
+      "start": 13.52,
+      "end": 19.58,
+      "props": {
+        "name": "Remotion",
+        "source": "remotion.dev · 官网实际页面",
+        "url": "https://www.remotion.dev/",
+        "image": "/episodes/demo/remotion.png",
+        "size": [
+          848,
+          620
+        ],
+        "focus": {
+          "x": 228,
+          "y": 279,
+          "w": 390,
+          "h": 27,
+          "at": 17.22,
+          "text": "Create videos and motion graphics with React.",
+          "label": "官网原文"
+        },
+        "carry": {
+          "anchor": "item:2",
+          "click": true
+        },
+        "editorial": {
+          "label": "光标与相机 · 让重点被看见",
+          "lines": [
+            "说到哪里，",
+            "就看哪里。"
+          ],
+          "sub": "先聚光关键句，再把原文抬成卡片。",
+          "tag": "FOCUS / 聚光与原文"
+        }
+      },
+      "header": {
+        "title": "让原文成为重点",
+        "sub": "真实页面聚光，再把原文抬成卡片。"
+      },
+      "dark": true
+    },
+    {
+      "id": "motion",
+      "template": "scene",
+      "start": 19.58,
+      "end": 30.474,
+      "props": {
+        "pieces": [
+          {
+            "kind": "text",
+            "text": "检查项",
+            "at": 20.6,
+            "y": 560,
+            "size": 104,
+            "mark": {
+              "word": "检查项",
+              "at": 20.9
+            },
+            "out": 26.75
+          },
+          {
+            "kind": "toggles",
+            "at": 21.45,
+            "y": 860,
+            "items": [
+              {
+                "label": "光标点击",
+                "type": "toggle",
+                "on": false,
+                "flipAt": 23.15,
+                "emphAt": 23.27
+              },
+              {
+                "label": "相机跟随",
+                "type": "toggle",
+                "on": false,
+                "flipAt": 24.1,
+                "emphAt": 24.22
+              }
+            ]
+          },
+          {
+            "kind": "toggles",
+            "at": 21.75,
+            "y": 1150,
+            "items": [
+              {
+                "label": "承接换页",
+                "type": "toggle",
+                "on": false,
+                "flipAt": 25.05,
+                "emphAt": 25.17
+              },
+              {
+                "label": "运动模糊",
+                "type": "toggle",
+                "on": false,
+                "flipAt": 25.95,
+                "emphAt": 26.07
+              }
+            ]
+          },
+          {
+            "kind": "text",
+            "text": "都打开",
+            "at": 27.44,
+            "y": 560,
+            "size": 104,
+            "mark": {
+              "word": "都打开",
+              "at": 27.74
+            },
+            "out": 28.05
+          },
+          {
+            "kind": "text",
+            "text": "讲完了",
+            "at": 29.04,
+            "y": 560,
+            "size": 96,
+            "mark": {
+              "word": "讲完了",
+              "at": 29.34
+            }
+          }
+        ],
+        "editorial": {
+          "label": "动效检查 · 让每个动作有依据",
+          "lines": [
+            "四项能力，",
+            "逐个打开。"
+          ],
+          "sub": "光标点击、相机跟随、承接换页与运动模糊。",
+          "tag": "MOTION / 动作与讲解同步"
+        }
+      }
+    },
+    {
+      "id": "beat-outro",
+      "template": "showcase",
+      "start": 30.474,
+      "end": 34.474,
+      "rhythm": {
+        "mode": "beat",
+        "bpm": 120
+      },
+      "dark": true,
+      "props": {
+        "variant": "result",
+        "kicker": "TALK-WORKBENCH",
+        "title": "让每句话，都有画面",
+        "sub": "讲解清楚，也有展示的节奏。",
+        "revealAt": {
+          "beat": 1
+        },
+        "cta": "开始你的下一期",
+        "ctaAt": {
+          "beat": 3
+        },
+        "titleLines": [
+          "让每句话，",
+          "都有画面。"
+        ],
+        "accent": "blue"
+      }
+    }
+  ],
+  "format": "landscape",
+  "audioOffset": 4,
+  "rhythm": {
+    "mode": "voice"
+  },
+  "music": {
+    "src": "score.mp3",
+    "volume": 0.22,
+    "voiceVolume": 0.025
+  },
+  "presentation": "showcase"
+}

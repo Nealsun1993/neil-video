@@ -1,0 +1,27 @@
+{
+  "brand": "口播工作台",
+  "tagline": "让讲解，有画面。",
+  "audio": "paper-line/music.m4a",
+  "duration": 33,
+  "timing": {"lineAt": 1.6, "char": 0.12, "styledChar": 0.15, "hold": 1, "swarm": 1.8, "wall": 5, "poster": 6, "block": 4.4},
+  "line": [
+    {"text": "说一句"},
+    {"text": "口播", "style": "voice", "tag": "配音"},
+    {"text": "，可以很"},
+    {"text": "重", "style": "heavy", "tag": "文稿"},
+    {"text": "，可以很"},
+    {"text": "轻", "style": "light", "tag": "字幕"},
+    {"text": "，可以"},
+    {"text": "慢慢说", "style": "breathe", "tag": "节奏"},
+    {"text": "，让"},
+    {"text": "画面", "style": "pixel", "tag": "画面"},
+    {"text": "自己"},
+    {"text": "跟上", "style": "lean", "tag": "剪辑"},
+    {"text": "。"}
+  ],
+  "roles": ["文稿", "字幕", "配音", "画面", "节奏", "剪辑", "导出", "封面"],
+  "wallWord": "画面",
+  "poster": ["说到哪，", "画面", "跟到哪。"],
+  "block": {"label": "一句话", "rows": ["一句话", "一百种", "画面"]},
+  "texture": "口播工作台"
+}

@@ -1,0 +1,76 @@
+{
+  "brand": "口播工作台",
+  "headline": "让表达，有画面。",
+  "duration": 24,
+  "audio": "episodes/og-collage/music.m4a",
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4,
+      "lines": [
+        "一个想法，",
+        "就能开场。"
+      ]
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "lines": [
+        "开口，",
+        "让故事发生。"
+      ]
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "lines": [
+        "把表达，拼起来。"
+      ]
+    },
+    {
+      "start": 12,
+      "end": 16,
+      "lines": [
+        "不止一种风格。"
+      ]
+    },
+    {
+      "start": 16,
+      "end": 20,
+      "lines": [
+        "让表达，",
+        "有画面。"
+      ]
+    },
+    {
+      "start": 20,
+      "end": 24,
+      "lines": [
+        "口播工作台",
+        "让表达，有画面。"
+      ]
+    }
+  ],
+  "materials": {
+    "slots": {},
+    "cards": [
+      {
+        "label": "文字",
+        "icon": "document"
+      },
+      {
+        "label": "声音",
+        "icon": "audio"
+      },
+      {
+        "label": "画面",
+        "icon": "play"
+      }
+    ],
+    "caption": "换文案，换素材，保留设计。",
+    "windowLabels": [
+      "主画面",
+      "补充画面"
+    ]
+  }
+}

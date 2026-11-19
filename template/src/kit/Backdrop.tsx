@@ -9,6 +9,7 @@ import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {C} from './tokens';
 import {lerp} from './motion';
+import {useEpisodeLayout} from './LayoutContext';
 
 export type BackdropSpec = {kind?: 'grid' | 'aura' | 'plain'; gap?: number; strength?: number};
 type Cam = {s: number; tx: number; ty: number};
@@ -21,11 +22,12 @@ const dots = (color: string, r: number, gap: number): React.CSSProperties => ({
 });
 
 export const Backdrop: React.FC<{t: number; spec?: BackdropSpec; cam: Cam; dark: number}> = ({t, spec, cam, dark}) => {
+  const l = useEpisodeLayout();
   const kind = spec?.kind ?? 'plain';
   if (kind === 'plain' || dark >= 1) return null;
   const k = spec?.strength ?? 1;
   // 主光：在画面下半部慢慢游走（28s / 19s 两个周期叠加，不会看出循环）
-  const lx = 540 + 300 * Math.sin((TAU * t) / 28), ly = 1560 + 140 * Math.sin((TAU * t) / 19 + 1);
+  const lx = l.width/2 + 300 * Math.sin((TAU * t) / 28), ly = l.height * 0.8125 + 140 * Math.sin((TAU * t) / 19 + 1);
   // 副光：左上角，更淡
   const sx = 200 + 140 * Math.sin((TAU * t) / 31 + 2), sy = 300 + 90 * Math.cos((TAU * t) / 23);
   if (kind === 'aura') {
@@ -41,7 +43,7 @@ export const Backdrop: React.FC<{t: number; spec?: BackdropSpec; cam: Cam; dark:
   // grid：点阵随相机轻微视差（相机推近 1.2 倍，点阵只推近 1.04 倍）
   const P = 0.2, s = lerp(1, cam.s, P), tx = lerp(0, cam.tx, P), ty = lerp(0, cam.ty, P);
   const gap = spec?.gap ?? 40, pad = 160;
-  const layer: React.CSSProperties = {position: 'absolute', left: -pad, top: -pad, width: 1080 + pad * 2, height: 1920 + pad * 2, transformOrigin: `${pad}px ${pad}px`, transform: `translate(${tx}px, ${ty}px) scale(${s})`};
+  const layer: React.CSSProperties = {position: 'absolute', left: -pad, top: -pad, width: l.width + pad * 2, height: l.height + pad * 2, transformOrigin: `${pad}px ${pad}px`, transform: `translate(${tx}px, ${ty}px) scale(${s})`};
   return (
     <AbsoluteFill style={{opacity: (1 - dark) * k}}>
       <AbsoluteFill style={{background: `radial-gradient(ellipse 720px 560px at ${lx}px ${ly}px, rgba(40,91,240,0.13), rgba(40,91,240,0) 70%)`}} />

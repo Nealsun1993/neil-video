@@ -1,0 +1,47 @@
+{
+  "brand": "口播工作台",
+  "audio": "blue-gallery/music.m4a",
+  "sources": {
+    "hybrid": {"src": "blue-gallery/media/hybrid.mp4", "length": 34.416},
+    "story": {"src": "blue-gallery/media/story.mp4", "length": 13.45},
+    "clean": {"src": "blue-gallery/media/clean.mp4", "length": 60.011},
+    "prism": {"src": "blue-gallery/media/prism.mp4", "length": 32.95}
+  },
+  "media": {
+    "hybridDark": {"src": "hybrid", "at": 0.4, "label": "简约工作台"},
+    "hybridWork": {"src": "hybrid", "at": 7.6, "label": "工作台演示"},
+    "clean": {"src": "clean", "at": 17.8, "label": "纯白产品演示"},
+    "prismColor": {"src": "prism", "at": 13.8, "label": "虹彩产品演示"},
+    "prismCard": {"src": "prism", "at": 18.4, "label": "虹彩确认卡"},
+    "story": {"src": "story", "at": 0.3, "label": "连续叙事"},
+    "cleanPreview": {"src": "clean", "at": 30, "label": "纯白预览"}
+  },
+  "wall": {
+    "intro": ["认识", "模板"],
+    "cards": ["clean", "hybridDark", "prismColor", "story", "prismCard", "hybridWork", "cleanPreview", "hybridDark"],
+    "features": [
+      {"media": "hybridDark", "lines": ["真实可编辑，", "不是效果图。"]},
+      {"media": "hybridWork", "lines": ["每一步操作，", "都在画面里。"]}
+    ]
+  },
+  "formats": {
+    "title": "干净的模板，各有用处。",
+    "cards": ["hybridDark", "clean", "prismColor", "story", "prismCard"]
+  },
+  "prompt": {
+    "title": "换一句话，换一套画面。",
+    "text": "把这一期换成纯白风格，保留口播和字幕。",
+    "button": "应用样式"
+  },
+  "editor": {
+    "window": "口播工作台 · 样式",
+    "heading": "这一期",
+    "styles": [
+      {"name": "简约工作台", "media": "hybridDark"},
+      {"name": "纯白产品演示", "media": "cleanPreview"},
+      {"name": "虹彩产品演示", "media": "prismColor"}
+    ],
+    "fields": [["画幅", "16:9"], ["字幕", "底部居中"]]
+  },
+  "outro": {"line": "从一句话，到一条成片。", "title": "从一个模板开始"}
+}

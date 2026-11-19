@@ -1,0 +1,9 @@
+{
+  "field": "Original deterministic SVG, two pitches 22px / 34px",
+  "proof": {
+    "portrait": "成片/一个想法长成片子-剪纸风-竖屏.mp4",
+    "landscape": "成片/一个想法长成片子-剪纸风-横屏.mp4"
+  },
+  "proofTimeSeconds": 21.5,
+  "control": "template/src/index.tsx: PaperStoryPortrait / PaperStoryLandscape"
+}

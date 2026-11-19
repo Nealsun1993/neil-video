@@ -1,0 +1,218 @@
+{
+ "id": "blue-talk-short",
+ "title": "蓝光口播版 · 短稿换音乐",
+ "style": "blue",
+ "duration": 15,
+ "brand": "口播工作台",
+ "audio": "/episodes/story-demo/narration.m4a",
+ "audioOffset": 0.8,
+ "music": {
+  "src": "/paper-line/music.m4a",
+  "volume": 0.3,
+  "voiceVolume": 0.09
+ },
+ "clips": {
+  "hybridDark": {
+   "kind": "card",
+   "label": "简约工作台",
+   "title": "场景与工作台交替",
+   "badge": "STYLE 01",
+   "lines": [
+    "概念场景讲思路",
+    "工作台演操作步骤"
+   ]
+  },
+  "hybridWork": {
+   "kind": "card",
+   "label": "工作台演示",
+   "title": "按讲解加入模块",
+   "badge": "WORKFLOW",
+   "lines": [
+    "说到哪个工具加哪个",
+    "时间轴对齐真实配音"
+   ]
+  },
+  "clean": {
+   "kind": "card",
+   "label": "纯白产品演示",
+   "title": "真实页面聚光抬卡",
+   "badge": "STYLE 05",
+   "lines": [
+    "聚光关键原句",
+    "抬起原文卡片清晰可读"
+   ]
+  },
+  "prismColor": {
+   "kind": "card",
+   "label": "虹彩产品演示",
+   "title": "虹彩流体对话流",
+   "badge": "STYLE 03",
+   "lines": [
+    "问答气泡顶边锁死",
+    "预览窗与要点无缝承接"
+   ]
+  },
+  "prismCard": {
+   "kind": "card",
+   "label": "虹彩确认卡",
+   "title": "原文卡片直观呈现",
+   "badge": "QUOTE",
+   "lines": [
+    "截图小字不硬放大",
+    "原文重排成高对比卡片"
+   ]
+  },
+  "story": {
+   "kind": "card",
+   "label": "连续叙事",
+   "title": "从关键词到工作流",
+   "badge": "STORY",
+   "lines": [
+    "上一镜卡片原地展开",
+    "完成连接后收束结果"
+   ]
+  },
+  "cleanPreview": {
+   "kind": "card",
+   "label": "纯白预览",
+   "title": "横竖双画幅自适应",
+   "badge": "16:9 / 3:4",
+   "lines": [
+    "三脚架零晃动镜头",
+    "重点单向推近稳停"
+   ]
+  },
+  "cleanImport": {
+   "kind": "card",
+   "label": "导入文稿",
+   "title": "一条配音驱动全片",
+   "badge": "STEP 01",
+   "lines": [
+    "自动提取字级时间戳",
+    "字幕与动作毫秒同步"
+   ]
+  }
+ },
+ "captions": [
+  {
+   "text": "这是口播工作台的演示",
+   "start": 0.8,
+   "end": 2.45
+  },
+  {
+   "text": "说到一个工具",
+   "start": 3.1,
+   "end": 3.85
+  },
+  {
+   "text": "它就被加进清单",
+   "start": 4.2,
+   "end": 5.3
+  },
+  {
+   "text": "文案",
+   "start": 5.8,
+   "end": 6.3
+  },
+  {
+   "text": "配音",
+   "start": 6.44,
+   "end": 6.95
+  },
+  {
+   "text": "画面",
+   "start": 7.2,
+   "end": 7.55
+  },
+  {
+   "text": "再由一个统筹者",
+   "start": 8.1,
+   "end": 9.15
+  },
+  {
+   "text": "把它们连起来",
+   "start": 9.2,
+   "end": 10.25
+  }
+ ],
+ "shots": [
+  {
+   "id": "s01",
+   "template": "blue.title",
+   "start": 0,
+   "end": 2.9,
+   "props": {
+    "kicker": "演示",
+    "lines": [
+     "口播工作台"
+    ]
+   }
+  },
+  {
+   "id": "s02",
+   "template": "blue.wall",
+   "start": 2.9,
+   "end": 5.6,
+   "props": {
+    "cards": [
+     "hybridWork",
+     "clean",
+     "prismColor",
+     "story",
+     "prismCard",
+     "hybridDark",
+     "cleanPreview",
+     "cleanImport"
+    ]
+   }
+  },
+  {
+   "id": "s03",
+   "template": "blue.row",
+   "start": 5.6,
+   "end": 7.9,
+   "props": {
+    "cards": [
+     {
+      "media": "cleanImport",
+      "label": "文案",
+      "at": 5.8
+     },
+     {
+      "media": "hybridDark",
+      "label": "配音",
+      "at": 6.44
+     },
+     {
+      "media": "prismColor",
+      "label": "画面",
+      "at": 7.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "s04",
+   "template": "blue.prompt",
+   "start": 7.9,
+   "end": 11.6,
+   "props": {
+    "text": "把文案、配音、画面，连成一条工作流。",
+    "button": "连起来"
+   }
+  },
+  {
+   "id": "s05",
+   "template": "blue.outro",
+   "start": 11.6,
+   "end": 15,
+   "props": {
+    "title": "连成一条工作流"
+   }
+  }
+ ],
+ "sfx": {
+  "src": "sfx.m4a",
+  "volume": 0.5
+ }
+}

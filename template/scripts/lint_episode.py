@@ -18,7 +18,7 @@
   ! 镜头不连续    相邻镜头之间有空档或重叠
 退出码：有 ✗ 为 1。
 """
-import json, re, sys
+import json, re, sys, subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -29,6 +29,11 @@ length = lambda s: sum(0.5 if re.match(r"[A-Za-z0-9]", c) else 1 for c in norm(s
 
 def lint(name):
     ep = json.loads((ROOT / "public/episodes" / name / "episode.json").read_text())
+    if ep.get("format") or ep.get("rhythm") or any(s.get("rhythm") for s in ep["shots"]):
+        resolved = subprocess.run([str(ROOT / "node_modules/.bin/tsx"), str(ROOT / "scripts/resolve-episode.ts"), name], cwd=ROOT, capture_output=True, text=True)
+        if resolved.returncode:
+            print(f"✗ {name}: {resolved.stderr.strip()}"); return 1
+        ep = json.loads(resolved.stdout)
     shots, caps, out = ep["shots"], ep.get("captions", []), []
     chs = ep.get("chapters", []); opening = chs[1]["at"] if len(chs) > 1 else shots[0]["end"]   # 第一章（开场）结束的时间
     err = lambda sid, msg: out.append(("✗", sid, msg)); warn = lambda sid, msg: out.append(("!", sid, msg))

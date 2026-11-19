@@ -1,12 +1,20 @@
 {
-  "name": "talk-workbench",
-  "version": "1.1.0",
-  "description": "口播工作台：配音驱动的竖屏讲解视频，场景 + 工作台 + 动效检查，基于 Remotion",
+  "name": "neil-video",
+  "version": "2.0.0",
+  "description": "neil-video：配音驱动的五风格口播讲解视频工作流（16:9 横屏 + 3:4 竖屏主标准，三脚架零晃动动效，基于 Remotion）",
   "scripts": {
     "setup": "node scripts/setup-fonts.cjs",
     "studio": "remotion studio src/index.tsx",
     "still": "remotion still src/index.tsx Episode",
-    "render": "remotion render src/index.tsx Episode"
+    "render": "remotion render src/index.tsx Episode",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "studio:hybrid": "remotion studio src/index.tsx --no-open --props='{\"episode\":\"hybrid-demo\"}'",
+    "workbench": "node scripts/local-workbench.cjs",
+    "preview": "node scripts/local-workbench.cjs preview",
+    "verify": "node scripts/local-workbench.cjs verify",
+    "export": "node scripts/local-workbench.cjs render",
+    "skill:install": "node scripts/install-local-skill.cjs"
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "5.2.8",
@@ -20,5 +28,16 @@
     "roughjs": "4.6.6"
   },
   "private": true,
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@remotion/bundler": "4.0.532",
+    "@remotion/renderer": "4.0.532",
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
 }

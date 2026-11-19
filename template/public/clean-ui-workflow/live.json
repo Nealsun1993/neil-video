@@ -1,0 +1,19 @@
+{
+  "audio": "clean-ui-workflow/music.m4a",
+  "sample": {
+    "project": "口播样稿",
+    "fileName": "voice.m4a",
+    "prefix": "今天来讲口播工作",
+    "before": "抬",
+    "after": "台",
+    "cue": "字幕预览已同步更新",
+    "keyword": "口播工作台"
+  },
+  "phone": {
+    "src": "clean-ui-workflow/media/portrait.mp4",
+    "clipAt": 2.9,
+    "length": 34.4,
+    "formats": [["横屏 16:9", "1920 × 1080"], ["竖屏 9:16", "1080 × 1920"]]
+  },
+  "search": "口播工作台 模板"
+}

@@ -1,0 +1,45 @@
+{
+  "brand": "口播工作台",
+  "handle": "@工作台",
+  "user": {"name": "尼尔", "initial": "尼"},
+  "audio": "prism-promo/chat-music.m4a",
+  "duration": 30,
+  "media": {
+    "preview": {"src": "prism-promo/media/hybrid.mp4", "at": 7.6, "length": 34.4},
+    "window": {"src": "prism-promo/media/clean.mp4", "at": 27.8, "length": 60}
+  },
+  "scenes": [
+    {"kind": "logo", "start": 0, "end": 0.9, "dark": true},
+    {"kind": "icons", "start": 0.9, "end": 2},
+    {"kind": "headline", "start": 2, "end": 3.6, "dark": true, "lines": ["说一句，", "就开工。"]},
+    {"kind": "chat", "start": 3.6, "end": 7, "messages": [
+      {"at": 0.45, "from": "user", "time": "10:16", "text": "@工作台 把这段口播做成视频", "typed": true, "media": "preview", "mediaAt": 1.5}
+    ]},
+    {"kind": "chat", "start": 7, "end": 9, "messages": [
+      {"at": 0.15, "from": "user", "time": "10:17", "text": "@工作台 字幕帮我校对一遍"},
+      {"at": 0.85, "from": "user", "time": "10:17", "text": "关键词都配上画面 @工作台"}
+    ]},
+    {"kind": "chat", "start": 9, "end": 10.5, "messages": [
+      {"at": 0.15, "from": "bench", "time": "10:17", "text": "收到，开始整理。"}
+    ]},
+    {"kind": "window", "start": 10.5, "end": 14, "media": "window", "title": "口播样稿 · 整理中"},
+    {"kind": "chat", "start": 14, "end": 16, "dark": true, "messages": [
+      {"at": 0.25, "from": "user", "time": "10:21", "text": "@工作台 还有哪句没配画面？"}
+    ]},
+    {"kind": "chat", "start": 16, "end": 19.5, "messages": [
+      {"at": 0.15, "from": "bench", "time": "10:21", "text": "还有三句没有配画面：", "list": ["开头的自我介绍", "中间讲价格的那句", "结尾的行动号召"]},
+      {"at": 2.4, "from": "bench", "time": "10:22", "text": "要我直接补上吗？"}
+    ]},
+    {"kind": "chat", "start": 19.5, "end": 22, "messages": [
+      {"at": 0.1, "from": "bench", "time": "10:22", "text": "要我直接补上吗？"},
+      {"at": 0.75, "from": "user", "time": "10:22", "text": "@工作台 好，补上。"}
+    ]},
+    {"kind": "chat", "start": 22, "end": 25, "messages": [
+      {"at": 0.15, "from": "user", "time": "10:25", "text": "@工作台 成片发我看看"},
+      {"at": 0.95, "from": "bench", "time": "10:25", "text": "已导出，横屏竖屏各一条。"},
+      {"at": 1.95, "from": "user", "time": "10:26", "text": "太好了！"}
+    ]},
+    {"kind": "punch", "start": 25, "end": 28.5, "dark": true, "lines": [["边说，", "边做。"], ["想改，", "就说。"], ["只要", "一句话。"]]},
+    {"kind": "logo", "start": 28.5, "end": 30, "dark": true}
+  ]
+}

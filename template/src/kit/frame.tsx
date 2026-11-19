@@ -4,9 +4,12 @@ import {AbsoluteFill, continueRender, delayRender, staticFile, useCurrentFrame} 
 import {C, G, T, FONT} from './tokens';
 import {flowIn, flowOut, FLOW_OUT, rise, mix} from './motion';
 import {Episode, Shot} from './types';
+import {PIXEL_FONT,PIXEL} from './pixelDesign';
+import {useEpisodeLayout} from './LayoutContext';
 
 /** 顶部标题区：章节名 / 标题 / 副标题 常驻，只替换变化的那一行 */
 export const Header: React.FC<{t: number; ep: Episode; dark: number}> = ({t, ep, dark}) => {
+  const l = useEpisodeLayout();
   const shots = ep.shots;
   const i = Math.max(0, shots.findIndex((s) => t >= s.start && t < s.end));
   const cur = shots[i];
@@ -20,7 +23,7 @@ export const Header: React.FC<{t: number; ep: Episode; dark: number}> = ({t, ep,
     const changed = before === null || before !== now;
     const outP = Math.min(1, Math.max(0, (t - cur.start) / 0.15));
     return (
-      <div style={{position: 'absolute', left: G.left, top, width: G.width, ...style}}>
+      <div style={{position: 'absolute', left: l.format === 'landscape' ? l.rail.x : G.left, top: l.format === 'landscape' ? l.rail.y + top - G.headerTop : top, width: l.format === 'landscape' ? l.rail.w : G.width, ...style}}>
         {prev && changed && outP < 1 ? <div style={{position: 'absolute', opacity: 1 - outP, transform: `translateY(${-16 * outP}px)`}}>{before}</div> : null}
         <div style={changed ? rise(t, cur.start + 0.12, 16) : undefined}>{now}</div>
       </div>
@@ -46,9 +49,15 @@ export const Layer: React.FC<{t: number; shot: Shot; hold?: boolean; children: R
 
 /** 字幕 */
 export const Subtitle: React.FC<{t: number; ep: Episode; dark: number}> = ({t, ep, dark}) => {
+  const l = useEpisodeLayout();
   const c = ep.captions.find((x) => t >= x.start && t < x.end);
   if (!c) return null;
-  return <div style={{position: 'absolute', left: G.left, top: G.subtitleTop, width: G.width, textAlign: 'center', fontFamily: FONT, ...T.subtitle, fontSize: c.text.length > 18 ? 42 : 46, color: mix(C.ink, '#FFFFFF', dark)}}>{c.text}</div>;
+  if(ep.presentation==='pixel')return <div style={{position:'absolute',left:80,top:l.format==='3:4'?1296:l.format==='portrait'?1710:950,width:l.width-160,fontFamily:PIXEL_FONT,fontWeight:400,fontSize:l.format==='3:4'?42:48,lineHeight:1.45,color:PIXEL.ink,textAlign:'center'}}>{c.text}</div>;
+  const isShowcase916 = ep.presentation === 'showcase' && ep.format === 'portrait';
+  const is34 = l.format === '3:4';
+  const top = isShowcase916 ? 1710 : l.subtitle.y;
+  const fontSize = is34 ? (c.text.length > 18 ? 38 : 42) : isShowcase916 ? (c.text.length>18?38:44) : l.format === 'landscape' ? (c.text.length > 32 ? 40 : 44) : c.text.length > 18 ? 42 : 46;
+  return <div style={{position: 'absolute', left: l.subtitle.x, top, width: l.subtitle.w, textAlign: 'center', fontFamily: FONT, ...T.subtitle, fontSize, lineHeight: is34 || isShowcase916 ? 1.35 : l.format === 'landscape' ? 1.4 : T.subtitle.lineHeight, color: mix(C.ink, '#FFFFFF', dark)}}>{c.text}</div>;
 };
 
 /** 字体：MiSans（按字符分片）+ JetBrains Mono；每帧等字体就绪再截图 */

@@ -1,0 +1,19 @@
+{
+  "kind": "original local instrumental",
+  "bpm": 120,
+  "duration": 24,
+  "voice": false,
+  "paidCalls": 0,
+  "inputStats": {
+    "input_i": "-25.39",
+    "input_tp": "-11.35",
+    "input_lra": "1.50",
+    "input_thresh": "-35.42",
+    "output_i": "-14.91",
+    "output_tp": "-2.00",
+    "output_lra": "0.50",
+    "output_thresh": "-24.93",
+    "normalization_type": "dynamic",
+    "target_offset": "0.11"
+  }
+}

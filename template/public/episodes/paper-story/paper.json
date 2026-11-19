@@ -1,0 +1,17 @@
+{
+ "title":"一个想法，长成一条片子",
+ "duration":45,
+ "format":"portrait",
+ "audio":"episodes/paper-story/music.m4a",
+ "scenes":[
+  {"id":"seed","kind":"title","start":0,"end":4,"lines":["一个想法，","长成一条片子。"],"highlight":1,"note":"剪纸故事 / 第一条风格样片"},
+  {"id":"spark","kind":"spark","start":4,"end":9,"lines":["灵感，","先轻轻亮起来。"],"highlight":1,"note":"不必一开始，就想好全部。"},
+  {"id":"words","kind":"words","start":9,"end":14,"lines":["把想法，","写成自己的话。"],"highlight":1,"note":"先说什么，再说什么。"},
+  {"id":"rhythm","kind":"rhythm","start":14,"end":19,"lines":["让声音，","找到舒服的节奏。"],"highlight":1,"note":"听得清，也留得住停顿。"},
+  {"id":"picture","kind":"picture","start":19,"end":24,"lines":["再给每句话，","一个看得懂的画面。"],"highlight":1,"note":"一句话，一幅画。"},
+  {"id":"join","kind":"steps","start":24,"end":29,"lines":["文字、声音、画面，","慢慢连成故事。"],"highlight":1,"note":"让每一步，接住下一步。"},
+  {"id":"grow","kind":"growth","start":29,"end":34,"lines":["每个小片段，","都有自己的位置。"],"highlight":1,"note":"故事，就这样长大。"},
+  {"id":"remember","kind":"meaning","start":34,"end":39,"lines":["最后，留下一句","让人记得的话。"],"highlight":1,"note":"让讲解，有画面。"},
+  {"id":"close","kind":"end","start":39,"end":45,"lines":["口播工作台","让讲解，有画面。"],"highlight":1,"note":"github.com/Nealsun1993/talk-workbench"}
+ ]
+}

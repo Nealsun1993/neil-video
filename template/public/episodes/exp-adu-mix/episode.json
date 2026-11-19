@@ -1,0 +1,409 @@
+{
+ "id": "exp-adu-mix",
+ "title": "五套 UI 融合 adu 结构对比实验 · 两款文案技能演示",
+ "style": "exp-lab",
+ "format": "3:4",
+ "defaultSkin": "clean",
+ "duration": 30,
+ "brand": "文案工坊",
+ "audio": "/episodes/clean-talk-demo/narration.m4a",
+ "audioOffset": 0,
+ "music": {
+  "src": "/clean-ui-workflow/music.m4a",
+  "volume": 0.24,
+  "voiceVolume": 0.08
+ },
+ "clips": {
+  "dbsCard": {
+   "kind": "card",
+   "label": "选题与标题",
+   "title": "先定选题，一屏出齐三件套",
+   "badge": "dbs Skill",
+   "lines": [
+    "拉出四个受众痛点切角",
+    "同步交付标题封面与开头"
+   ]
+  },
+  "flowCard": {
+   "kind": "card",
+   "label": "双技能成稿",
+   "title": "定题立项 + 真人润色",
+   "badge": "成稿闭环",
+   "lines": [
+    "前端标题封面吸引点击",
+    "正文白话自然留住读者"
+   ]
+  }
+ },
+ "captions": [
+  {
+   "text": "所有做自媒体、写文案的人",
+   "start": 0.25,
+   "end": 2.138
+  },
+  {
+   "text": "都该把这两个神级 Skill",
+   "start": 2.138,
+   "end": 4.006
+  },
+  {
+   "text": "装进你的 Agent 里",
+   "start": 4.006,
+   "end": 5.635
+  },
+  {
+   "text": "一个帮你定出有人想点的标题",
+   "start": 5.915,
+   "end": 8.273
+  },
+  {
+   "text": "封面和前十秒开头",
+   "start": 8.273,
+   "end": 9.924
+  },
+  {
+   "text": "一个帮你把整篇稿子的 AI 味洗干净",
+   "start": 9.924,
+   "end": 12.871
+  },
+  {
+   "text": "第一个，专门管标题",
+   "start": 13.471,
+   "end": 15.297
+  },
+  {
+   "text": "封面和开头的 dbs Skill",
+   "start": 15.297,
+   "end": 17.962
+  },
+  {
+   "text": "国内自媒体博主开源的项目",
+   "start": 17.962,
+   "end": 20.048
+  },
+  {
+   "text": "它不会上来就硬编标题",
+   "start": 20.328,
+   "end": 22.084
+  },
+  {
+   "text": "先帮你定选题",
+   "start": 22.084,
+   "end": 23.403
+  },
+  {
+   "text": "第二个，Humanizer，专门去 AI 味",
+   "start": 23.694,
+   "end": 26.382
+  },
+  {
+   "text": "觉得有用，记得点赞、收藏、关注",
+   "start": 26.636,
+   "end": 29.473
+  }
+ ],
+ "shots": [
+  {
+   "id": "s01",
+   "template": "exp.statement",
+   "skin": "prism",
+   "start": 0,
+   "end": 4,
+   "props": {
+    "kicker": "AI 写作工作流",
+    "badge": "2 SKILLS",
+    "hero": "两个神级写作技能",
+    "echoLayers": 3,
+    "wrong": "靠临时提示词硬憋标题与正文",
+    "right": "把选题与去味装进工作流",
+    "strikeAt": 1.45,
+    "revealAt": 2.2,
+    "sub": "面向自媒体创作者与写作者的双技能组合"
+   }
+  },
+  {
+   "id": "s02",
+   "template": "exp.converge",
+   "skin": "clean",
+   "start": 4,
+   "end": 9.92,
+   "props": {
+    "kicker": "模块化接入",
+    "title": "装进 Agent · 产出开篇三件套",
+    "inputs": [
+     {
+      "badge": "INPUT 01",
+      "title": "有人想点标题",
+      "sub": "戳中受众好奇心",
+      "at": 4.25
+     },
+     {
+      "badge": "INPUT 02",
+      "title": "吸睛封面词",
+      "sub": "一屏建立视觉焦点",
+      "at": 5.95
+     },
+     {
+      "badge": "INPUT 03",
+      "title": "前十秒开头",
+      "sub": "开篇留住划走手指",
+      "at": 7.6
+     }
+    ],
+    "railAt": 8.05,
+    "hub": {
+     "badge": "AGENT HUB",
+     "title": "写作智能体",
+     "sub": "双技能协同调度",
+     "at": 8.32
+    },
+    "output": {
+     "badge": "开篇成稿",
+     "title": "标题封面与开头齐备",
+     "sub": "前十秒建立强吸引",
+     "media": "dbsCard",
+     "lines": [
+      "四向受众选题切角",
+      "真事数字开场钩子"
+     ],
+     "at": 8.75
+    },
+    "cue": "三大前端要素已汇入智能体流水线"
+   }
+  },
+  {
+   "id": "s03",
+   "template": "exp.balance",
+   "skin": "paper",
+   "start": 9.92,
+   "end": 13.3,
+   "props": {
+    "kicker": "好稿子的双重标准",
+    "title": "前端有点击，正文去机器味",
+    "left": {
+     "tag": "吸引点击",
+     "label": "好标题与开头",
+     "sub": "决定观众点不点开",
+     "metric": "前 10 秒"
+    },
+    "right": {
+     "tag": "留住读者",
+     "label": "洗净整篇 AI 味",
+     "sub": "决定读者看不看完",
+     "metric": "全篇白话"
+    },
+    "initialTilt": -9,
+    "levelAt": 10.55,
+    "steps": [
+     {
+      "badge": "01",
+      "label": "删空洞套话",
+      "detail": "剔除赋能闭环等机器词",
+      "at": 11.2
+     },
+     {
+      "badge": "02",
+      "label": "改短句节奏",
+      "detail": "贴近真人呼吸与停顿",
+      "at": 11.65
+     },
+     {
+      "badge": "03",
+      "label": "留真实细节",
+      "detail": "用具体经历替代空泛总结",
+      "at": 12.1
+     }
+    ],
+    "cue": "点击率与完读率两端稳态平衡"
+   }
+  },
+  {
+   "id": "s04",
+   "template": "exp.editorial",
+   "skin": "minimal",
+   "start": 13.3,
+   "end": 20.2,
+   "props": {
+    "kicker": "SKILL 01 · 深度拆解",
+    "issue": "NO.01 / OPEN",
+    "title": "dbs Skill 选题引擎",
+    "sub": "国内自媒体创作者实战沉淀的开源项目",
+    "nav": [
+     {
+      "code": "01",
+      "label": "专管标题打磨",
+      "detail": "多组受众痛点切角并行",
+      "at": 13.55
+     },
+     {
+      "code": "02",
+      "label": "封面与黄金开头",
+      "detail": "视觉钩子与前十秒台词同步",
+      "at": 15.35
+     },
+     {
+      "code": "03",
+      "label": "国内博主开源",
+      "detail": "中文语境真实经验提炼",
+      "at": 18
+     }
+    ],
+    "panel": {
+     "windowTitle": "dbs-skill · 模块总览",
+     "badge": "开源实战",
+     "title": "一屏交付标题、封面与开头",
+     "sub": "针对中文内容创作场景打磨的结构化流程",
+     "lines": [
+      "拉出四个差异化受众方向",
+      "配套生成封面视觉关键词",
+      "追问真实数字写出黄金十秒"
+     ],
+     "spotlight": {
+      "badge": "项目来源",
+      "text": "国内自媒体博主开源，懂中文读者胃口",
+      "at": 18.15
+     },
+     "footer": "模块就绪 · 可直接装进你的 Agent"
+    }
+   }
+  },
+  {
+   "id": "s05",
+   "template": "exp.compare",
+   "skin": "blue",
+   "start": 20.2,
+   "end": 23.55,
+   "props": {
+    "kicker": "起稿方式对比",
+    "title": "拒绝硬编噱头 · 先定准选题",
+    "left": {
+     "badge": "传统硬编",
+     "title": "上来直接硬凑标题",
+     "lines": [
+      "脱离受众凭空堆砌噱头",
+      "十个标题同质化严重",
+      "点进来三秒就划走"
+     ],
+     "foot": "无根之木，难以持续产出"
+    },
+    "right": {
+     "badge": "先定选题",
+     "title": "先定选题再出标题",
+     "lines": [
+      "先锚定受众关心什么问题",
+      "拆出四个清晰选题切角",
+      "选定方向后一屏出齐三件套"
+     ],
+     "foot": "方向对了，标题自然想点"
+    },
+    "strikeAt": 20.85,
+    "stamp": "淘汰硬编",
+    "stampAt": 21.35,
+    "cue": "先定准选题方向，再生成高点击标题",
+    "zoom": {
+     "at": 22.1,
+     "scale": 1.05
+    }
+   }
+  },
+  {
+   "id": "s06",
+   "template": "exp.metric",
+   "skin": "clean",
+   "start": 23.55,
+   "end": 26.55,
+   "props": {
+    "kicker": "SKILL 02 · 去机器味",
+    "title": "Humanizer · 清洗机器味",
+    "fromValue": 24,
+    "value": 96,
+    "unit": "%",
+    "label": "真人白话语感匹配度",
+    "countEndAt": 24.85,
+    "bars": [
+     {
+      "label": "自然口语短句占比",
+      "value": 94,
+      "max": 100,
+      "display": "94%",
+      "highlight": true,
+      "at": 23.85
+     },
+     {
+      "label": "个人常用词贴合度",
+      "value": 91,
+      "max": 100,
+      "display": "91%",
+      "highlight": true,
+      "at": 24.15
+     },
+     {
+      "label": "生硬套话残留比例",
+      "value": 6,
+      "max": 100,
+      "display": "仅 6%",
+      "highlight": false,
+      "at": 24.45
+     }
+    ],
+    "conclusion": {
+     "badge": "去味完成",
+     "text": "对照机器套话清单清洗，读起来像真人聊天",
+     "at": 25.05
+    }
+   }
+  },
+  {
+   "id": "s07",
+   "template": "exp.stepsMerge",
+   "skin": "paper",
+   "dark": true,
+   "start": 26.55,
+   "end": 30,
+   "props": {
+    "kicker": "双技能成稿闭环",
+    "title": "三步串起高点击耐读成稿",
+    "trackLabel": "WORKFLOW",
+    "steps": [
+     {
+      "step": "01",
+      "badge": "立项",
+      "title": "dbs 定选题",
+      "sub": "锁定受众痛点与开头",
+      "at": 26.72
+     },
+     {
+      "step": "02",
+      "badge": "润色",
+      "title": "Humanizer 去味",
+      "sub": "洗净套话还原真人语气",
+      "at": 27.05
+     },
+     {
+      "step": "03",
+      "badge": "成稿",
+      "title": "一屏定稿发布",
+      "sub": "标题有点击正文耐读",
+      "at": 27.38
+     }
+    ],
+    "mergeAt": 27.95,
+    "summary": {
+     "badge": "收藏备用",
+     "title": "好标题吸引点击，真白话留住读者",
+     "sub": "两个写作技能装进智能体，立项润色一步到位",
+     "media": "flowCard",
+     "lines": [
+      "dbs 技能：先定选题再出标题开头",
+      "去味技能：逐句洗净套话还原白话"
+     ],
+     "footer": "觉得有用 · 点赞 · 收藏 · 关注"
+    }
+   }
+  }
+ ],
+ "sfx": {
+  "src": "sfx.m4a",
+  "volume": 0.5
+ }
+}

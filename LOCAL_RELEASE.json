@@ -1,0 +1,359 @@
+{
+  "name": "neil-video",
+  "version": "2.0.0",
+  "id": "neil-video-v2.0.0-2026-11-19",
+  "status": "v2.0-ready",
+  "upstream": "https://github.com/Nealsun1993/neil-video",
+  "previousUpstream": "https://github.com/Nealsun1993/talk-workbench",
+  "upstreamCommit": "6b9184021e3fec5b771d8c38429a65791d1f25ee",
+  "nodeVerified": "22.23.1",
+  "remotion": "4.0.532",
+  "date": "2026-11-19",
+  "timezone": "Asia/Shanghai",
+  "compositions": [
+    "Episode",
+    "HybridLandscape",
+    "HybridPortrait",
+    "StoryLandscape",
+    "StoryPortrait"
+  ],
+  "limitations": "详见 LOCAL_STATUS.md；不代表上游正式发布或任意内容自动验收",
+  "testsPassed": 19,
+  "episodeConfigsVerified": [
+    "demo",
+    "hybrid-demo",
+    "story-demo"
+  ],
+  "freshInstallVerified": true,
+  "freshRootExportVerified": true,
+  "dualFormatSmokeFrames": 4,
+  "seamChecksPassed": true,
+  "previewVariants": {
+    "pixel": {
+      "status": "preview",
+      "compositions": [
+        "PixelLandscape",
+        "PixelPortrait"
+      ],
+      "episode": "pixel-demo",
+      "testsPassed": 26,
+      "guide": "references/pixel.md",
+      "date": "2026-10-27"
+    },
+    "pixelMinute": {
+      "status": "preview",
+      "composition": "PixelMinute",
+      "duration": 60,
+      "format": "landscape",
+      "testsPassed": 28,
+      "story": "template/public/episodes/pixel-minute/story.json"
+    },
+    "pixelWorld": {
+      "status": "preview",
+      "composition": "PixelWorldMinute",
+      "duration": 60,
+      "format": "landscape",
+      "testsPassed": 31,
+      "story": "template/public/episodes/pixel-world/story.json",
+      "landscapeUserApproved": "2026-10-27"
+    },
+    "pixelWorldPortrait": {
+      "status": "user-approved",
+      "composition": "PixelWorldPortrait",
+      "duration": 60,
+      "format": "portrait",
+      "testsPassed": 34,
+      "rules": "references/pixel-world-portrait.md",
+      "styleIndex": "视频规则.md",
+      "userApproved": "2026-10-27"
+    },
+    "paperStory": {
+      "status": "same-style-baseline",
+      "composition": "PaperStoryPortrait",
+      "duration": 45,
+      "format": "portrait",
+      "sourceSkill": "bs-paper-cutout-story-video@1.0.0",
+      "testsPassed": 37,
+      "guide": "references/paper-story-portrait.md",
+      "styleApproved": "2026-10-27"
+    },
+    "paperStoryLandscape": {
+      "status": "user-approved",
+      "composition": "PaperStoryLandscape",
+      "duration": 45,
+      "format": "landscape",
+      "testsPassed": 38,
+      "guide": "references/paper-story-portrait.md",
+      "userApproved": "2026-10-27"
+    },
+    "halftone": {
+      "status": "preview-pending-user-review",
+      "composition": "HalftoneLaunch",
+      "duration": 24,
+      "format": "landscape",
+      "testsPassed": 42,
+      "sourceSkill": "bs-hyperframes-halftone-canvas-launch@1.0.0",
+      "guide": "references/halftone-launch.md",
+      "deliveryDate": "2026-10-30",
+      "actualFrames": 720,
+      "canvasFramesChecked": 900,
+      "decodePassed": true,
+      "lufs": -14.98,
+      "truePeakDbtp": -2.08,
+      "styleId": "halftone-ascii"
+    },
+    "halftoneDynamic": {
+      "status": "preview-pending-user-review",
+      "composition": "HalftoneLaunchDynamic",
+      "duration": 24,
+      "format": "landscape",
+      "guide": "references/halftone-launch.md",
+      "date": "2026-10-30",
+      "testsPassed": 42,
+      "styleId": "halftone-ascii"
+    },
+    "halftoneAscii": {
+      "status": "preview-pending-user-review",
+      "composition": "HalftoneAsciiFusion",
+      "duration": 24,
+      "fps": 30,
+      "format": "landscape",
+      "guide": "references/halftone-ascii-fusion.md",
+      "date": "2026-10-30",
+      "sourceSkill": "bs-ascii-glitch-launch-video@1.0.1",
+      "testsPassed": 42,
+      "actualFrames": 720,
+      "decodePassed": true,
+      "styleId": "halftone-ascii"
+    },
+    "halftoneAsciiPortrait": {
+      "status": "preview-pending-user-review",
+      "composition": "HalftoneAsciiPortrait",
+      "duration": 24,
+      "fps": 30,
+      "format": "portrait",
+      "guide": "references/halftone-ascii-portrait.md",
+      "date": "2026-10-30",
+      "testsPassed": 42,
+      "actualFrames": 720,
+      "decodePassed": true,
+      "lufs": -14.98,
+      "truePeakDbtp": -2.09,
+      "styleId": "halftone-ascii"
+    },
+    "ogCollage": {
+      "status": "preview-pending-user-review",
+      "composition": "OgCollageLaunch",
+      "duration": 24,
+      "fps": 30,
+      "format": "landscape",
+      "guide": "references/og-collage.md",
+      "date": "2026-11-02",
+      "testsPassed": 42,
+      "sourceSkill": "bs-linktree-style-og@1.0.2",
+      "implementation": "original layered React/SVG animation",
+      "actualFrames": 720,
+      "decodePassed": true,
+      "lufs": -14.99,
+      "truePeakDbtp": -1.92
+    },
+    "ogMix": {
+      "status": "preview-pending-user-review",
+      "composition": "OgMixLaunch",
+      "duration": 24,
+      "fps": 30,
+      "format": "landscape",
+      "date": "2026-11-02",
+      "guide": "references/og-mix.md",
+      "testsPassed": 42,
+      "skills": {
+        "bs-spotify-style-og": "1.0.2",
+        "bs-nike-style-og": "1.0.2",
+        "bs-slack-style-og": "1.0.2",
+        "bs-wise-style-og": "1.0.2"
+      },
+      "actualFrames": 720,
+      "decodePassed": true,
+      "lufs": -14.99,
+      "truePeakDbtp": -1.92
+    },
+    "ogTemplate": {
+      "status": "user-approved",
+      "composition": "OgTemplateLaunch",
+      "date": "2026-11-02",
+      "duration": 24,
+      "fps": 30,
+      "format": "landscape",
+      "guide": "references/og-template.md",
+      "customImagesRequired": 0,
+      "testsPassed": 46,
+      "actualFrames": 720,
+      "decodePassed": true,
+      "lufs": -14.99,
+      "truePeakDbtp": -1.92,
+      "userApproved": "2026-11-02"
+    },
+    "ogTemplatePortrait": {
+      "status": "preview-pending-user-review",
+      "composition": "OgTemplatePortrait",
+      "date": "2026-11-02",
+      "duration": 24,
+      "fps": 30,
+      "format": "portrait",
+      "guide": "references/og-template-portrait.md",
+      "customImagesRequired": 0,
+      "testsPassed": 46,
+      "actualFrames": 720,
+      "decodePassed": true,
+      "lufs": -14.99,
+      "truePeakDbtp": -1.92
+    },
+    "blueGalleryLive": {
+      "status": "preview-pending-user-review",
+      "format": "landscape",
+      "fps": 60,
+      "date": "2026-11-10",
+      "testsPassed": 58,
+      "decodePassed": true,
+      "composition": "BlueGalleryLive",
+      "entry": "src/blue-gallery-preview.tsx",
+      "duration": 31,
+      "guide": "references/blue-gallery-demo.md",
+      "config": "template/public/blue-gallery/live.json",
+      "sample": "成片/蓝光展廊实片版-2026-11-09/",
+      "motionAvg": 6.95,
+      "referenceMotionAvg": 14.2,
+      "configDriven": true
+    },
+    "prismChat": {
+      "status": "preview-pending-user-review",
+      "format": "landscape",
+      "fps": 60,
+      "date": "2026-11-10",
+      "testsPassed": 58,
+      "decodePassed": true,
+      "composition": "PrismChat",
+      "entry": "src/prism-preview.tsx",
+      "duration": 30,
+      "guide": "references/prism-product-demo.md",
+      "config": "template/public/prism-promo/chat.json",
+      "sample": "成片/虹彩对话版-2026-11-10/",
+      "motionAvg": 6.13,
+      "referenceMotionAvg": 6.15,
+      "configDriven": true
+    },
+    "cleanUiLive": {
+      "status": "preview-pending-user-review",
+      "format": "landscape",
+      "fps": 60,
+      "date": "2026-11-10",
+      "testsPassed": 58,
+      "decodePassed": true,
+      "composition": "CleanUiLive",
+      "entry": "src/index.tsx",
+      "duration": 60,
+      "guide": "references/clean-ui-demo.md",
+      "config": "template/public/clean-ui-workflow/live.json",
+      "sample": "成片/纯白镜头版-2026-11-10/",
+      "motionAvg": 2.96,
+      "referenceMotionAvg": 2.9,
+      "configDriven": true
+    },
+    "paperLine": {
+      "status": "preview-pending-user-review",
+      "format": "landscape",
+      "fps": 60,
+      "date": "2026-11-10",
+      "testsPassed": 58,
+      "decodePassed": true,
+      "composition": "PaperLine",
+      "entry": "src/index.tsx",
+      "duration": 33,
+      "guide": "references/paper-line.md",
+      "config": "template/public/paper-line/line.json",
+      "sample": "成片/纸感排印-2026-11-10/",
+      "actualFrames": 1980,
+      "lufs": -14.8,
+      "motionAvg": 6.2,
+      "referenceMotionAvg": 5.33,
+      "configDriven": true
+    },
+    "blueTalk": {
+      "status": "preview-pending-user-review",
+      "format": "landscape",
+      "fps": 60,
+      "date": "2026-11-11",
+      "testsPassed": 64,
+      "decodePassed": true,
+      "composition": "BlueTalk",
+      "entry": "src/index.tsx",
+      "guide": "references/blue-talk.md",
+      "timing": "narration",
+      "episodes": {
+        "blue-talk-demo": {
+          "duration": 30,
+          "motionAvg": 6.64,
+          "lufs": -14.5
+        },
+        "blue-talk-short": {
+          "duration": 15,
+          "motionAvg": 5.45,
+          "lufs": -14.5
+        }
+      },
+      "sample": "成片/蓝光口播版-2026-11-11/",
+      "configDriven": true,
+      "portrait": false
+    }
+  },
+  "styleCatalog": {
+    "date": "2026-11-02",
+    "count": 5,
+    "styles": [
+      {
+        "id": "minimal",
+        "name": "简约工作台"
+      },
+      {
+        "id": "pixel-world",
+        "name": "像素世界"
+      },
+      {
+        "id": "paper-story",
+        "name": "剪纸故事"
+      },
+      {
+        "id": "halftone-ascii",
+        "name": "半调 × ASCII",
+        "compositions": [
+          "HalftoneAsciiFusion",
+          "HalftoneAsciiPortrait"
+        ],
+        "historicalVariants": [
+          "HalftoneLaunch",
+          "HalftoneLaunchDynamic"
+        ]
+      },
+      {
+        "id": "og-collage",
+        "name": "OG 拼贴",
+        "sourceSkill": "bs-linktree-style-og@1.0.2",
+        "status": "still-preview-pending-user-review",
+        "motionStatus": "landscape-preview-implemented",
+        "guide": "references/og-collage.md",
+        "asset": "assets/og-collage/og-card.webp",
+        "compositions": [
+          "OgTemplateLaunch",
+          "OgTemplatePortrait",
+          "OgMixLaunch",
+          "OgCollageLaunch"
+        ],
+        "backgroundGuide": "references/og-mix.md",
+        "defaultComposition": "OgTemplateLaunch",
+        "templateGuide": "references/og-template.md",
+        "portraitComposition": "OgTemplatePortrait",
+        "portraitGuide": "references/og-template-portrait.md"
+      }
+    ]
+  }
+}

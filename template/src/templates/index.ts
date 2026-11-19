@@ -12,6 +12,9 @@ import {Outro} from './Outro';
 import {Placeholder} from './Placeholder';
 import {Orb} from './Orb';
 import {Scene} from './Scene';
+import {PixelStory} from './PixelStory';
+import {StoryFlow} from './StoryFlow';
+import {Showcase} from './Showcase';
 
 export const TEMPLATES: Record<string, React.FC<TemplateProps>> = {
   opener: Opener,     // 开场（方案 C 默认）：角色立绘 + 本期图标 → 收进托盘，窗口从托盘长出
@@ -23,6 +26,9 @@ export const TEMPLATES: Record<string, React.FC<TemplateProps>> = {
   media: MediaShot,   // 成果 / 样图 / 动画：带真实性标签
   outro: Outro,       // 结尾：关键词 + 头像
   orb: Orb,          // 方案 D：角色开场或竖排大纲
+  'story.flow': StoryFlow,
+  'pixel.story': PixelStory,
+  showcase: Showcase, // 讲解/节拍共用的开场、章节和结果包装
   scene: Scene,      // 方案 D：概念场景
   TODO: Placeholder,  // 骨架占位：还没选模板
 };

@@ -1,0 +1,122 @@
+{
+  "id": "story-demo",
+  "title": "从关键词到工作流 · 连续叙事实验",
+  "duration": 13.5,
+  "format": "landscape",
+  "presentation": "showcase",
+  "audio": "narration.m4a",
+  "envelope": "envelope.json",
+  "chapters": [],
+  "captions": [
+    {
+      "text": "这是口播工作台的演示",
+      "start": 0.0,
+      "end": 1.65
+    },
+    {
+      "text": "说到一个工具",
+      "start": 2.3,
+      "end": 3.05
+    },
+    {
+      "text": "它就被加进清单",
+      "start": 3.4,
+      "end": 4.5
+    },
+    {
+      "text": "文案",
+      "start": 5.0,
+      "end": 5.5
+    },
+    {
+      "text": "配音",
+      "start": 5.64,
+      "end": 6.15
+    },
+    {
+      "text": "画面",
+      "start": 6.4,
+      "end": 6.75
+    },
+    {
+      "text": "再由一个统筹者",
+      "start": 7.3,
+      "end": 8.35
+    },
+    {
+      "text": "把它们连起来",
+      "start": 8.4,
+      "end": 9.45
+    }
+  ],
+  "app": {
+    "title": "口播工作台"
+  },
+  "shots": [
+    {
+      "id": "one-object",
+      "template": "story.flow",
+      "start": 0,
+      "end": 13.5,
+      "props": {
+        "introLines": [
+          "让一句话，",
+          "带出下一步。"
+        ],
+        "introSub": "从关键词，到可执行的工作流。",
+        "keyword": "工具",
+        "actionLines": [
+          "关键词，",
+          "进入工作台。"
+        ],
+        "actionSub": "说到哪个模块，就把它加进来。",
+        "resultLines": [
+          "三个模块，",
+          "连成一条工作流。"
+        ],
+        "resultSub": "让画面，跟着讲解走。",
+        "resultLabel": "工作流已连接",
+        "cues": {
+          "at": 2.3,
+          "openAt": 3.4,
+          "boxAt": 9.52,
+          "liftAt": 9.82
+        },
+        "modules": {
+          "title": "口播工作流",
+          "sub": "说到哪个，加哪个",
+          "items": [
+            {
+              "name": "文案",
+              "role": "先确认，再往下做",
+              "icon": "file-text",
+              "at": 5.0
+            },
+            {
+              "name": "配音",
+              "role": "真人录音或 TTS",
+              "icon": "microphone",
+              "at": 5.64
+            },
+            {
+              "name": "画面",
+              "role": "跟着配音的时间走",
+              "icon": "film-slate",
+              "at": 6.4
+            }
+          ],
+          "orchestrator": {
+            "name": "统筹者",
+            "role": "把三步连起来",
+            "icon": "terminal-window",
+            "at": 7.8
+          }
+        }
+      }
+    }
+  ],
+  "sfx": {
+    "src": "actions.wav",
+    "volume": 0.6
+  }
+}

@@ -11,7 +11,7 @@ import {C, T} from '../kit/tokens';
 import {Episode, Envelope, Shot} from '../kit/types';
 import {Tag, textWidth} from '../kit/components';
 import {smooth, clamp01, lerp, flowOut, FLOW_OUT, mix, camEase, morphEase} from '../kit/motion';
-import {WIN, BAR_H, TABS_H, TOP, PAD, CW, VIEW, Cam, IDENTITY, camFor} from './geom';
+import {WIN, BAR_H, TABS_H, TOP, PAD, CW, VIEW, Cam, IDENTITY, camFor, portraitPresentationCamera, geometryOf, geometryOfEpisode} from './geom';
 import {APP_TEMPLATES} from './index';
 import {Act, Focus, Anchor} from './types';
 import {Easing} from 'remotion';
@@ -20,6 +20,7 @@ import {CastTile} from '../templates/Opener';
 import {PointerCtx} from './pointer';
 
 const ease = Easing.bezier(0.32, 0.72, 0, 1);
+const focusCurve = Easing.bezier(0.22, 1, 0.36, 1);
 const E = (t: number, at: number, d: number) => ease(clamp01((t - at) / d));
 
 export type Session = {start: number; end: number; shots: Shot[]};
@@ -37,7 +38,6 @@ export const sessionsOf = (ep: Episode): Session[] => {
 // ── 承接（carry）：上一页的某个元素长成下一页 ──
 // 镜头 props.carry = {anchor: '上一页锚点名', click?: true}；锚点由上一页模板的 anchors() 给出。
 export const MORPH = 0.55;
-const CONTENT: [number, number, number, number] = [0, TOP, WIN.w, WIN.h - TOP];
 const carryOf = (sess: Session, s: Shot): Anchor | null => {
   const c = s.props?.carry; if (!c) return null;
   const i = sess.shots.indexOf(s); if (i <= 0) return null;
@@ -45,7 +45,6 @@ const carryOf = (sess: Session, s: Shot): Anchor | null => {
   return tpl?.anchors?.(p)?.[c.anchor] ?? null;
 };
 const lerpRect = (a: number[], b: number[], k: number) => a.map((v, i) => lerp(v, b[i], k)) as [number, number, number, number];
-const inset = (r: number[], rad: number) => `inset(${r[1]}px ${WIN.w - r[0] - r[2]}px ${WIN.h - r[1] - r[3]}px ${r[0]}px round ${rad}px)`;
 
 // ── 启动承接：窗口从开场里的某个东西长出来 ──
 // launch = {from: [x, y, w, h], r, bg}（画面坐标），或 {from: 'opener'}：从开场托盘长出，托盘里的图标飞进这一页
@@ -81,7 +80,8 @@ export const appMoving = (ep: Episode, t: number) => sessionsOf(ep).some((sess) 
 // 标签栏
 const TAB_PAD = 28, TAB_GAP = 6, TAB_Y = BAR_H + 16, TAB_H = 64;
 const tabsOf = (ep: Episode) => ep.chapters.filter((c: any) => c.tab).map((c: any) => ({at: c.at, label: c.tab as string}));
-const tabGeom = (tabs: {label: string}[]) => {
+const tabGeom = (tabs: {label: string}[], ep: Episode) => {
+  const {CW} = geometryOfEpisode(ep);
   // 章节多时自动收窄左右留白（最少 14），保证标签栏不超出窗口
   const text = tabs.reduce((a, tb) => a + textWidth(tb.label, 32), 0);
   const pad = Math.max(14, Math.min(TAB_PAD, (CW - 12 - text - TAB_GAP * (tabs.length - 1)) / (2 * tabs.length)));
@@ -90,7 +90,7 @@ const tabGeom = (tabs: {label: string}[]) => {
 };
 
 const Tabs: React.FC<{t: number; ep: Episode}> = ({t, ep}) => {
-  const tabs = tabsOf(ep), g = tabGeom(tabs);
+  const tabs = tabsOf(ep), g = tabGeom(tabs, ep);
   if (!tabs.length) return null;
   const i = Math.max(0, tabs.filter((x) => x.at <= t + 0.001).length - 1);
   const pi = Math.max(0, i - 1);
@@ -111,6 +111,7 @@ const Tabs: React.FC<{t: number; ep: Episode}> = ({t, ep}) => {
 // 光标关键帧
 type KF = {t: number; x: number; y: number; move: number; click?: boolean; press?: boolean};
 const planCursor = (sess: Session, ep: Episode): KF[] => {
+  const {WIN} = geometryOfEpisode(ep);
   const acts: Act[] = sess.shots.flatMap((s) => APP_TEMPLATES[s.template]?.acts(s) ?? []);
   // 承接点击：光标点上一页的那个元素，它随即长成这一页
   const clicked: number[] = [];
@@ -118,7 +119,7 @@ const planCursor = (sess: Session, ep: Episode): KF[] => {
     const a = carryOf(sess, s);
     if (a && s.props.carry.click) { const [x, y, w, h] = a.rect; acts.push({at: s.start - 0.1, x: x + Math.min(w * 0.45, 300), y: y + h / 2 + 8, kind: 'click'}); clicked.push(s.start); }
   }
-  const tabs = tabsOf(ep), g = tabGeom(tabs);
+  const tabs = tabsOf(ep), g = tabGeom(tabs, ep);
   tabs.forEach((tb, j) => {
     if (tb.at > sess.start + 0.2 && tb.at < sess.end && !clicked.some((c) => Math.abs(c - tb.at) < 0.1))
       acts.push({at: tb.at - 0.05, x: g[j].x + g[j].w / 2 + 10, y: TAB_Y + TAB_H / 2 + 14, kind: 'click'});
@@ -165,13 +166,15 @@ const camAt = (sess: Session, t: number): Cam => {
   if (!fs.length) return IDENTITY;
   let i = fs.filter((f) => f.at - 0.1 <= t).length - 1;
   if (i < 0) return IDENTITY;
-  const cur = camFor(fs[i].rect, fs[i].scale), prev = i > 0 ? camFor(fs[i - 1].rect, fs[i - 1].scale) : IDENTITY;
-  const p = camEase(clamp01((t - (fs[i].at - 0.1)) / 0.8)); // 提前 0.1s 起步，两头慢：跟随感
+  const format = sess.shots[0].props.__format;
+  const cur = camFor(fs[i].rect, fs[i].scale, format), prev = i > 0 ? camFor(fs[i - 1].rect, fs[i - 1].scale, format) : IDENTITY;
+  const p = focusCurve(clamp01((t - (fs[i].at - 0.1)) / 0.55));
   return {s: lerp(prev.s, cur.s, p), tx: lerp(prev.tx, cur.tx, p), ty: lerp(prev.ty, cur.ty, p)};
 };
 
 // 开场图标飞进页面：从托盘位置沿弧线飞到新页面的锚点（落位后由页面自己的图标接替）
 const CastFlight: React.FC<{t: number; ep: Episode; sess: Session; items: any[]; cam: Cam}> = ({t, ep, sess, items, cam}) => {
+  const {WIN} = geometryOfEpisode(ep);
   const first = sess.shots[0], tpl = APP_TEMPLATES[first.template];
   const anchors = tpl?.anchors?.(first) ?? {};
   const n = items.length, S = OPENER.tile;
@@ -201,18 +204,21 @@ const CastFlight: React.FC<{t: number; ep: Episode; sess: Session; items: any[];
   );
 };
 
-const Chrome: React.FC<{title: string}> = ({title}) => (
+const Chrome: React.FC<{title: string; width: number}> = ({title, width}) => (
   <>
-    <div style={{position: 'absolute', left: 0, top: 0, width: WIN.w, height: BAR_H, borderBottom: '2px solid #EEF1F6'}}>
+    <div style={{position: 'absolute', left: 0, top: 0, width, height: BAR_H, borderBottom: '2px solid #EEF1F6'}}>
       {[0, 1, 2].map((i) => <div key={i} style={{position: 'absolute', left: 30 + i * 26, top: BAR_H / 2 - 8, width: 16, height: 16, borderRadius: 8, background: '#D5DCE7'}} />)}
-      <div style={{position: 'absolute', left: 0, width: WIN.w, top: 0, height: BAR_H, display: 'flex', alignItems: 'center', justifyContent: 'center', ...T.caption, fontWeight: 600, color: C.ink}}>{title}</div>
+      <div style={{position: 'absolute', left: 0, width, top: 0, height: BAR_H, display: 'flex', alignItems: 'center', justifyContent: 'center', ...T.caption, fontWeight: 600, color: C.ink}}>{title}</div>
       <div style={{position: 'absolute', right: 20, top: (BAR_H - 50) / 2}}><Tag>示意界面</Tag></div>
     </div>
   </>
 );
 
-export const AppStage: React.FC<{t: number; ep: Episode; env: Envelope; sess: Session}> = ({t, ep, env, sess}) => {
+export const AppStage: React.FC<{t: number; ep: Episode; env: Envelope; sess: Session; surface?:boolean}> = ({t, ep, env, sess, surface=true}) => {
   if (t < sess.start || t >= sess.end + FLOW_OUT) return null;
+  const {WIN, VIEW, width, height} = geometryOfEpisode(ep);
+  const CONTENT: [number, number, number, number] = [0, TOP, WIN.w, WIN.h - TOP];
+  const inset = (r: number[], rad: number) => `inset(${r[1]}px ${WIN.w-r[0]-r[2]}px ${WIN.h-r[1]-r[3]}px ${r[0]}px round ${rad}px)`;
   const open = smooth(t, sess.start + 0.15, 0.55); // 等上一镜先退出，再打开窗口
   // 启动承接：窗口从上一镜里的某个东西（开场托盘 / 角色桌上的工具托盘）长出来
   const launch = launchOf(ep, sess);
@@ -221,21 +227,23 @@ export const AppStage: React.FC<{t: number; ep: Episode; env: Envelope; sess: Se
   const exit = t >= sess.end ? flowOut(t, sess.end) : {};
   const polish = (ep as any).motion?.polish !== false;  // 动效打磨（v5.3 起默认开；写 "motion": {"polish": false} 关掉）
   // 不做「镜头慢呼吸」：缓慢漂移会被动态自查判为问题（见 scripts/motion_audit.py）。待机靠真实变化填，不靠镜头漂。
-  const cam = camAt(sess, t);
+  const rawCam = camAt(sess, t);
+  const cam = ep.presentation === 'showcase' && ep.format !== 'landscape' ? portraitPresentationCamera(rawCam) : rawCam;
+  const camStill = Math.abs(cam.s - 1) < 1e-4 && Math.abs(cam.tx) < 0.05 && Math.abs(cam.ty) < 0.05;
   const cur = cursorAt(planCursor(sess, ep), t, polish);
-  const appTitle = (ep as any).app?.title ?? '口播工作台';
+  const appTitle = (ep as any).app?.title ?? (ep as any).brand ?? ep.title ?? '演示工作台';
   return (
-    <AbsoluteFill style={{...exit, WebkitMaskImage: `linear-gradient(to bottom, #000 ${VIEW.bottom - 40}px, transparent ${VIEW.bottom}px)`}}>
-      <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, transformOrigin: '0 0', transform: `translate(${cam.tx}px, ${cam.ty}px) scale(${cam.s})`}}>
+    <AbsoluteFill style={{...exit, WebkitMaskImage: ep.presentation === 'showcase' ? `linear-gradient(to bottom, #000 ${VIEW.bottom}px, transparent ${VIEW.bottom + 1}px)` : `linear-gradient(to bottom, #000 ${VIEW.bottom - 40}px, transparent ${VIEW.bottom}px)`}}>
+      <div style={{position: 'absolute', left: 0, top: 0, width, height, transformOrigin: '0 0', transform: camStill ? undefined : `translate(${cam.tx}px, ${cam.ty}px) scale(${cam.s})`}}>
         {/* 窗口 */}
-        {lr ? <div style={{position: 'absolute', left: WIN.x + lr[0], top: WIN.y + lr[1], width: lr[2], height: lr[3], borderRadius: lerp(launch.r ?? 24, 36, le),
+        {lr && surface ? <div style={{position: 'absolute', left: WIN.x + lr[0], top: WIN.y + lr[1], width: lr[2], height: lr[3], borderRadius: lerp(launch.r ?? 24, 36, le),
           background: mix(launch.bg ?? '#FFFFFF', '#FFFFFF', le), boxShadow: `0 ${lerp(10, 50, le)}px ${lerp(24, 100, le)}px -${lerp(4, 30, le)}px rgba(16,36,58,${lerp(0.18, 0.3, le)})`}} /> : null}
-        <div style={{position: 'absolute', left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, borderRadius: 36, background: '#fff', overflow: 'hidden',
-          boxShadow: lr ? 'none' : '0 50px 100px -30px rgba(16,36,58,0.30), 0 0 0 1.5px rgba(16,36,58,0.06)',
-          ...(lr ? {clipPath: inset(lr, lerp(launch.r ?? 24, 36, le)), background: 'transparent'} : {opacity: clamp01(open * 1.6), transform: `translateY(${(1 - open) * 60}px) scale(${0.94 + 0.06 * open})`, transformOrigin: '50% 60%'})}}>
+        <div style={{position: 'absolute', left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, borderRadius: 36, background: surface ? '#fff' : 'transparent', overflow: 'hidden',
+          boxShadow: lr || !surface ? 'none' : '0 50px 100px -30px rgba(16,36,58,0.30), 0 0 0 1.5px rgba(16,36,58,0.06)',
+          ...(lr ? {clipPath: inset(lr, lerp(launch.r ?? 24, 36, le)), background: 'transparent'} : open >= 0.999 ? {opacity: 1} : {opacity: clamp01(open * 1.6), transform: `translateY(${(1 - open) * 60}px) scale(${0.94 + 0.06 * open})`, transformOrigin: '50% 60%'})}}>
           <div style={{position: 'absolute', inset: 0, opacity: lr ? clamp01((le - 0.35) / 0.5) : 1}}>
           <PointerCtx.Provider value={{polish, x: cur.x, y: cur.y, t}}>
-          <Chrome title={appTitle} />
+          <Chrome title={appTitle} width={WIN.w} />
           <Tabs t={t} ep={ep} />
           {/* 页面：有承接时，上一页的元素长成这一页；没有承接时才推入推出 */}
           <div style={{position: 'absolute', left: 0, top: 0, width: WIN.w, height: WIN.h, clipPath: `inset(${TOP}px 0 0 0)`}}>

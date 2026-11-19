@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-02",
+  "skill": "bs-linktree-style-og@1.0.2",
+  "route": "built-in image_gen",
+  "generations": 1,
+  "falTask": null,
+  "brand": "口播工作台",
+  "headline": "让表达，有画面。",
+  "originalSize": [
+    1672,
+    941
+  ],
+  "deliverySize": [
+    1920,
+    1080
+  ],
+  "export": "FFmpeg format conversion and minor size normalization; no crop",
+  "motionImplemented": false
+}

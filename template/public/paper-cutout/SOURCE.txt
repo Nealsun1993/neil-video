@@ -1,0 +1,1 @@
+Paper props and clay surface generated from the locally installed Skillry bs-paper-cutout-story-video v1.0.0. Original source terms apply. Fonts: Nunito and Caveat, SIL OFL; see OFL.txt. Private local adaptation, not a grant of MIT rights to Skillry assets.

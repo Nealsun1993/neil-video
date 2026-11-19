@@ -17,10 +17,10 @@ export const UI = {
 /** 按下反馈：点击瞬间缩小 3% */
 export const pressScale = (t: number, clickAt?: number) => (clickAt !== undefined && t >= clickAt && t < clickAt + 0.16 ? 0.96 : 1);
 
-export const PageTitle: React.FC<{t: number; at: number; title: string; sub?: string}> = ({t, at, title, sub}) => (
+export const PageTitle: React.FC<{t: number; at: number; title: string; sub?: string; compact?: boolean}> = ({t, at, title, sub, compact}) => (
   <>
-    <div style={{position: 'absolute', left: PAD, top: 214, ...T.heading, fontSize: 56, color: C.ink, ...rise(t, at)}}>{title}</div>
-    {sub ? <div style={{position: 'absolute', left: PAD, top: 290, ...T.caption, color: C.secondary, ...rise(t, at + 0.06)}}>{sub}</div> : null}
+    <div style={{position: 'absolute', left: PAD, top: compact ? 204 : 214, ...T.heading, fontSize: compact ? 48 : 56, color: C.ink, ...rise(t, at)}}>{title}</div>
+    {sub ? <div style={{position: 'absolute', left: PAD, top: compact ? 270 : 290, ...T.caption, color: C.secondary, ...rise(t, at + 0.06)}}>{sub}</div> : null}
   </>
 );
 

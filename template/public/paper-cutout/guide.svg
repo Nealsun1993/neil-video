@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-25 -25 162 250">
+  <defs>
+    <filter id="lift" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="1" dy="3" stdDeviation="2" flood-color="#51463c" flood-opacity=".22"/>
+    </filter>
+    <pattern id="grain" width="8" height="7" patternUnits="userSpaceOnUse">
+      <path d="M1 2l2-.5m2 4 2-.5" stroke="#fff8e4" stroke-width=".5" opacity=".45"/>
+    </pattern>
+    <path id="coat" d="M34 69q20 9 42 0l13 17 9 37-12 5-10-24 5 46q-21 9-53-1l7-45-13 27-12-5 10-35z"/>
+  </defs>
+  <ellipse cx="56" cy="199" rx="46" ry="5" fill="#385232" opacity=".18"/>
+  <g filter="url(#lift)">
+    <path d="m35 141 19 2-1 48-19 2-4-8zm26 1 19-1 4 43-4 9-19-2z" fill="#405667"/>
+    <path d="M32 185q10 5 21 2l-2 12H23l-1-6zm29 2q11 3 21-2l10 8-1 6H63z" fill="#354047"/>
+    <path d="m14 120 11 5-5 13q-8 4-11-3zm73 4 11-4 6 14q-3 8-11 3z" fill="#DDA378"/>
+    <use href="#coat" fill="#559684"/>
+    <use href="#coat" fill="url(#grain)"/>
+    <path d="m48 64 16 1 3 12-11 9-12-9z" fill="#DDA378"/>
+    <path d="m41 75 15 11 14-11-4 13-10 5-11-5z" fill="#F6E4B8"/>
+    <path d="M58 95v53" stroke="#347767" stroke-width="1.6"/>
+    <path d="m66 112 13-1 1 15-13 1z" fill="#77AF9A"/>
+    <path d="M28 36Q25 13 48 5q28-8 39 15 7 14-3 31z" fill="#55443F"/>
+    <path d="M35 34q14 0 27-15 7 13 18 15l1 13q-2 24-23 28-23-1-24-24z" fill="#EAB58D"/>
+    <path d="M35 43q-11-4-9 5 1 6 9 7m44-12q11-4 9 5-1 6-9 7" fill="#EAB58D"/>
+    <path d="M47 45h.1m20 0h.1" stroke="#453D3E" stroke-width="3" stroke-linecap="round"/>
+    <path d="M53 58q4 4 9 0" stroke="#855146" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

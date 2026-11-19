@@ -1,0 +1,1 @@
+export const PAPER_WIDE={width:1920,height:1080,titleLeft:{x:100,y:170,w:830},stepCards:[{x:245,y:500,w:270,h:270},{x:825,y:500,w:270,h:270},{x:1405,y:500,w:270,h:270}],pictureCards:[{x:510,y:492,w:330,h:360},{x:920,y:460,w:330,h:360},{x:1330,y:492,w:330,h:360}]};

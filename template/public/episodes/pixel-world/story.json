@@ -1,0 +1,106 @@
+{
+  "title": "一分钟像素世界 · 空间叙事版",
+  "duration": 60,
+  "audio": "episodes/pixel-minute/mix.m4a",
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4,
+      "kind": "signal",
+      "label": "TALK-WORKBENCH / PIXEL FILM",
+      "title": "让想法，",
+      "accent": "开始流动。",
+      "detail": "从一句话，进入一个像素世界"
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "kind": "duo",
+      "label": "01 / FROM CLUTTER TO FLOW",
+      "title": "一句指令，",
+      "accent": "画面回应。",
+      "detail": "双窗口 / 创作概念示意"
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "kind": "typevoice",
+      "label": "02 / START WITH YOUR VOICE",
+      "title": "声音。",
+      "accent": "是故事的起点。",
+      "detail": "VOICE / TIMING / MOTION"
+    },
+    {
+      "start": 12,
+      "end": 16,
+      "kind": "hub",
+      "label": "03 / TIMING IS THE SCRIPT",
+      "title": "不止一个窗口，",
+      "accent": "而是一组关系。",
+      "detail": "让每个元素，找到自己的位置"
+    },
+    {
+      "start": 16,
+      "end": 29.5,
+      "kind": "narrative",
+      "label": "04 / WORKFLOW IN MOTION",
+      "title": "声音，",
+      "accent": "正在组织画面。",
+      "detail": "保留原配音 / 视觉重新编排"
+    },
+    {
+      "start": 29.5,
+      "end": 34,
+      "kind": "tunnel",
+      "label": "05 / TWO FORMATS",
+      "title": "穿过画面，",
+      "accent": "遇见不同表达。",
+      "detail": "卡片纵深 / 镜头穿梭"
+    },
+    {
+      "start": 34,
+      "end": 39,
+      "kind": "bigtype",
+      "label": "06 / TWO VISUAL LANGUAGES",
+      "title": "画面。",
+      "accent": "节奏。叙事。",
+      "detail": "不同内容，用不同的视觉语言"
+    },
+    {
+      "start": 39,
+      "end": 44,
+      "kind": "formats",
+      "label": "07 / KEEP IT EDITABLE",
+      "title": "同一个世界，",
+      "accent": "展开不同视角。",
+      "detail": "横向展开 / 纵向聚焦"
+    },
+    {
+      "start": 44,
+      "end": 49,
+      "kind": "city",
+      "label": "08 / PREVIEW TO EXPORT",
+      "title": "让一个信号，",
+      "accent": "穿过整个世界。",
+      "detail": "像素夜行 / 光点接力"
+    },
+    {
+      "start": 49,
+      "end": 54,
+      "kind": "assemble",
+      "label": "09 / ONE CONNECTED STORY",
+      "title": "自由设计，",
+      "accent": "保持叙事。",
+      "detail": "从分散的视觉，到完整的一条片子"
+    },
+    {
+      "start": 54,
+      "end": 60,
+      "kind": "end",
+      "label": "TALK-WORKBENCH",
+      "title": "口播工作台",
+      "accent": "让讲解，有画面。",
+      "detail": "github.com/Nealsun1993/talk-workbench"
+    }
+  ]
+}

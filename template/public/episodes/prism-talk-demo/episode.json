@@ -1,0 +1,279 @@
+{
+  "id": "prism-talk-demo",
+  "title": "虹彩对话口播版 · 两个文案 Skill (30s)",
+  "style": "prism",
+  "format": "landscape",
+  "duration": 30.0,
+  "brand": "文案改造台",
+  "handle": "@Agent",
+  "user": {
+    "name": "林夏",
+    "initial": "林"
+  },
+  "audio": "narration.m4a",
+  "audioOffset": 0.0,
+  "music": {
+    "src": "/prism-promo/music.m4a",
+    "volume": 0.28,
+    "voiceVolume": 0.08
+  },
+  "sfx": {
+    "src": "sfx.m4a",
+    "volume": 0.45
+  },
+  "clips": {
+    "dbsHero": {
+      "kind": "image",
+      "src": "dbs-hero.png",
+      "fit": "contain",
+      "label": "dbs Skill · 自制示意"
+    },
+    "dbsFlow": {
+      "kind": "card",
+      "badge": "STEP 01",
+      "title": "先按受众拉出四个选题切角",
+      "lines": [
+        "不硬编标题，先锁定目标读者痛点",
+        "追问真实经历与关键数字细节",
+        "一屏交付标题、封面字与前十秒开头"
+      ],
+      "footer": "初稿输入 → 四向选题 → 成套交付",
+      "accent": "blue"
+    }
+  },
+  "captions": [
+    {
+      "text": "所有做自媒体、写文案的人",
+      "start": 0.25,
+      "end": 2.138
+    },
+    {
+      "text": "都该把这两个神级 Skill",
+      "start": 2.138,
+      "end": 4.006
+    },
+    {
+      "text": "装进你的 Agent 里",
+      "start": 4.006,
+      "end": 5.635
+    },
+    {
+      "text": "一个帮你定出有人想点的标题",
+      "start": 5.915,
+      "end": 8.273
+    },
+    {
+      "text": "封面和前十秒开头",
+      "start": 8.273,
+      "end": 9.924
+    },
+    {
+      "text": "一个帮你把整篇稿子的 AI 味洗干净",
+      "start": 9.924,
+      "end": 12.871
+    },
+    {
+      "text": "第一个，专门管标题",
+      "start": 13.471,
+      "end": 15.297
+    },
+    {
+      "text": "封面和开头的 dbs Skill",
+      "start": 15.297,
+      "end": 17.962
+    },
+    {
+      "text": "国内自媒体博主开源的项目",
+      "start": 17.962,
+      "end": 20.048
+    },
+    {
+      "text": "它不会上来就硬编标题",
+      "start": 20.328,
+      "end": 22.084
+    },
+    {
+      "text": "先帮你定选题",
+      "start": 22.084,
+      "end": 23.403
+    },
+    {
+      "text": "第二个，Humanizer，专门去 AI 味",
+      "start": 23.694,
+      "end": 26.382
+    },
+    {
+      "text": "觉得有用，记得点赞、收藏、关注",
+      "start": 26.636,
+      "end": 29.473
+    }
+  ],
+  "shots": [
+    {
+      "id": "s01",
+      "template": "prism.logo",
+      "start": 0.0,
+      "end": 2.1,
+      "dark": true,
+      "props": {
+        "kicker": "AI 写作工作流",
+        "tagline": "双技能改造实录"
+      }
+    },
+    {
+      "id": "s02",
+      "template": "prism.icons",
+      "start": 2.1,
+      "end": 5.8,
+      "props": {
+        "kicker": "装进你的 Agent",
+        "items": [
+          {
+            "icon": "spark",
+            "label": "定选题标题",
+            "sub": "dbs Skill",
+            "at": 2.15
+          },
+          {
+            "icon": "wand",
+            "label": "洗净机器味",
+            "sub": "Humanizer",
+            "at": 3.1
+          },
+          {
+            "icon": "layers",
+            "label": "双工具串联",
+            "sub": "成套出稿",
+            "at": 4.05
+          }
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "template": "prism.chat",
+      "start": 5.8,
+      "end": 13.3,
+      "props": {
+        "messages": [
+          {
+            "at": 5.9,
+            "from": "user",
+            "time": "14:20",
+            "text": "@Agent 稿子写完没人点，还一股机器味怎么办？",
+            "typed": true
+          },
+          {
+            "at": 8.25,
+            "from": "bench",
+            "time": "14:20",
+            "text": "拆成两步：先抓前十秒点击，再把全文洗成真人口吻。",
+            "mediaAt": 9.95,
+            "media": {
+              "title": "双技能分工清单",
+              "badge": "2 SKILLS",
+              "lines": [
+                "定出有人想点的标题与封面",
+                "打磨留住读者的前十秒开头",
+                "洗净生硬排比与套话连接词"
+              ],
+              "accent": "purple"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "template": "prism.headline",
+      "start": 13.3,
+      "end": 17.9,
+      "dark": true,
+      "props": {
+        "kicker": "SKILL 01 · 开源利器",
+        "lines": [
+          "专门管标题，",
+          "封面与开头。"
+        ],
+        "sub": "dbs Skill · 一屏配齐开场三件套"
+      }
+    },
+    {
+      "id": "s05",
+      "template": "prism.window",
+      "start": 17.9,
+      "end": 20.2,
+      "props": {
+        "title": "dbs Skill · 国内博主开源规范示意",
+        "badge": "OPEN SOURCE",
+        "media": "dbsHero"
+      }
+    },
+    {
+      "id": "s06",
+      "template": "prism.window",
+      "start": 20.2,
+      "end": 23.5,
+      "props": {
+        "title": "dbs Skill · 不硬编标题先定选题",
+        "badge": "WORKFLOW",
+        "media": "dbsFlow",
+        "callouts": [
+          {
+            "text": "拒绝硬编标题",
+            "at": 20.35
+          },
+          {
+            "text": "先定受众选题",
+            "at": 22.1
+          }
+        ]
+      }
+    },
+    {
+      "id": "s07",
+      "template": "prism.chat",
+      "start": 23.5,
+      "end": 26.5,
+      "dark": true,
+      "props": {
+        "messages": [
+          {
+            "at": 23.7,
+            "from": "bench",
+            "time": "14:22",
+            "text": "第二棒交给 Humanizer，对照特征库专门去 AI 味。",
+            "list": [
+              "砍掉生硬排比与空洞总结",
+              "对齐你的日常句长与口吻"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "s08",
+      "template": "prism.punch",
+      "start": 26.5,
+      "end": 30.0,
+      "dark": true,
+      "props": {
+        "kicker": "WRITING WORKFLOW",
+        "lines": [
+          [
+            "好标题，",
+            "吸引点击。"
+          ],
+          [
+            "真白话，",
+            "留住读者。"
+          ],
+          [
+            "点赞收藏，",
+            "马上用上。"
+          ]
+        ]
+      }
+    }
+  ]
+}

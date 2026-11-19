@@ -1,0 +1,75 @@
+{
+  "title": "口播工作台 · 半调画布",
+  "duration": 24,
+  "audio": "episodes/halftone-launch/music.m4a",
+  "thesis": "让画面，听你的。",
+  "surface": "画面",
+  "problem": "总差一点。",
+  "ask": "横屏的看看效果。",
+  "asks": [
+    "竖屏也设计一个。",
+    "新版视频保存一下。",
+    "横屏的看看效果。",
+    "做一个一分钟的片子看一下效果。",
+    "3.4和9.5有一个小的跳帧。",
+    "中间可以用这个中间的设计。"
+  ],
+  "asksSource": "用户在本次对话中的原话，标点作排版整理；不是虚构客户反馈。",
+  "reframe": [
+    "从描述效果，",
+    "到确定画面。"
+  ],
+  "brand": "口播工作台",
+  "url": "github.com/Nealsun1993/talk-workbench",
+  "beats": [
+    {
+      "id": "thesis",
+      "start": 0,
+      "end": 2.6
+    },
+    {
+      "id": "surface",
+      "start": 2.6,
+      "end": 5
+    },
+    {
+      "id": "problem",
+      "start": 5,
+      "end": 7
+    },
+    {
+      "id": "ask",
+      "start": 7,
+      "end": 9.6
+    },
+    {
+      "id": "firehose",
+      "start": 9.6,
+      "end": 13
+    },
+    {
+      "id": "proof",
+      "start": 13,
+      "end": 17.5
+    },
+    {
+      "id": "reframe",
+      "start": 17.5,
+      "end": 20.1
+    },
+    {
+      "id": "lockup",
+      "start": 20.1,
+      "end": 24
+    }
+  ],
+  "proof": {
+    "heading": "同一故事，独立横竖构图。",
+    "caption": "源自已完成的真实工程与成片",
+    "portraitLabel": "PaperStoryPortrait",
+    "landscapeLabel": "PaperStoryLandscape",
+    "portrait": "halftone/proof-portrait.jpg",
+    "landscape": "halftone/proof-landscape.jpg",
+    "context": "template/src/index.tsx"
+  }
+}

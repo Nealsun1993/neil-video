@@ -1,0 +1,102 @@
+{
+  "source": "bs-paper-cutout-story-video",
+  "version": "1.0.0",
+  "props": {
+    "bulb": {
+      "w": 120,
+      "h": 160,
+      "pad": 35,
+      "src": "paper-cutout/bulb.svg"
+    },
+    "book": {
+      "w": 200,
+      "h": 120,
+      "pad": 35,
+      "src": "paper-cutout/book.svg"
+    },
+    "person": {
+      "w": 90,
+      "h": 200,
+      "pad": 35,
+      "src": "paper-cutout/person.svg"
+    },
+    "tree": {
+      "w": 200,
+      "h": 300,
+      "pad": 35,
+      "src": "paper-cutout/tree.svg"
+    },
+    "pine": {
+      "w": 140,
+      "h": 300,
+      "pad": 35,
+      "src": "paper-cutout/pine.svg"
+    },
+    "flower": {
+      "w": 60,
+      "h": 160,
+      "pad": 35,
+      "src": "paper-cutout/flower.svg"
+    },
+    "sprout": {
+      "w": 220,
+      "h": 260,
+      "pad": 35,
+      "src": "paper-cutout/sprout.svg"
+    },
+    "grass": {
+      "w": 120,
+      "h": 80,
+      "pad": 35,
+      "src": "paper-cutout/grass.svg"
+    },
+    "camera": {
+      "w": 160,
+      "h": 120,
+      "pad": 35,
+      "src": "paper-cutout/camera.svg"
+    },
+    "note": {
+      "w": 90,
+      "h": 120,
+      "pad": 35,
+      "src": "paper-cutout/note.svg"
+    },
+    "heart": {
+      "w": 110,
+      "h": 100,
+      "pad": 35,
+      "src": "paper-cutout/heart.svg"
+    },
+    "envelope": {
+      "w": 170,
+      "h": 116,
+      "pad": 35,
+      "src": "paper-cutout/envelope.svg"
+    },
+    "butterfly": {
+      "w": 90,
+      "h": 70,
+      "pad": 35,
+      "src": "paper-cutout/butterfly.svg"
+    },
+    "sunflower": {
+      "w": 90,
+      "h": 260,
+      "pad": 35,
+      "src": "paper-cutout/sunflower.svg"
+    },
+    "bush": {
+      "w": 200,
+      "h": 110,
+      "pad": 35,
+      "src": "paper-cutout/bush.svg"
+    },
+    "kite": {
+      "w": 160,
+      "h": 300,
+      "pad": 35,
+      "src": "paper-cutout/kite.svg"
+    }
+  }
+}

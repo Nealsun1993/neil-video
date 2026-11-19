@@ -27,6 +27,7 @@
 //   flood    {at, out, title, kicker?, no?, color?, fg?, size?}   整屏色块章节卡：色块铺满、巨字砸入、描边大序号，out 时往上退走（10-21 试行，只用在章节切换）
 //   kit      {y, at, openAt, boxAt, envAt, flyAt, bookLabel?}   自制插画（粗线卡通）：风格说明书翻开、露出几种 PPT 风格；AI 工具包打开、弹出扳手、AI 星星和安装说明；最后两样一起飞进信封
 import React from 'react';
+import {useEpisodeLayout} from '../kit/LayoutContext';
 import {Img, Loop, OffthreadVideo, Sequence, staticFile, interpolate, Easing} from 'remotion';
 import {C, T, MONO} from '../kit/tokens';
 import {Icon} from '../kit/components';
@@ -50,15 +51,18 @@ const Marker: React.FC<{p: number; tone?: string; children: React.ReactNode}> = 
 );
 
 const TextPiece = ({t, d}: any) => {
+  const l = useEpisodeLayout(), wide = l.format === 'landscape', is34 = l.format === '3:4';
   if (t < d.at) return null;
   const outP = d.out != null ? ease(t, d.out, 0.25, Easing.in(Easing.quad)) : 0;
   if (outP >= 1) return null;
   const chars = [...d.text], n = Math.floor((t - d.at) / (d.cps ?? 0.09)) + 1;
   const mi = d.mark ? d.text.indexOf(d.mark.word) : -1, ml = d.mark ? [...d.mark.word].length : 0;
   const ch = (c: string, i: number) => <span key={i} style={{opacity: i < n ? 1 : 0}}>{c}</span>;
+  const fs = is34 ? Math.round((d.size ?? 112) * 0.84) : (d.size ?? 112);
+  const cy = wide ? 410 : is34 ? Math.round(458 + (d.y - 560) * 0.68) : d.y;
   return (
-    <div style={{position: 'absolute', left: 0, width: 1080, top: d.y - (d.size ?? 112) * 0.7, textAlign: 'center', ...T.display, fontSize: d.size ?? 112, lineHeight: 1.4, fontWeight: 700, color: C.ink,
-      opacity: 1 - outP, transform: `translateY(${-30 * outP}px)`}}>
+    <div style={{position: 'absolute', left: wide ? l.rail.x : 0, width: wide ? l.rail.w : 1080, top: cy - fs * 0.7, textAlign: wide ? 'left' : 'center', ...T.display, fontSize: fs, lineHeight: 1.4, fontWeight: 700, color: C.ink,
+      opacity: 1 - outP, transform: outP > 0 ? `translateY(${-30 * outP}px)` : undefined}}>
       {mi < 0 ? chars.map(ch) : (
         <>
           {chars.slice(0, mi).map(ch)}
@@ -70,18 +74,27 @@ const TextPiece = ({t, d}: any) => {
   );
 };
 
-const TogglesPiece = ({t, d}: any) => {
-  const W = 320, H = 250, GAP = 40, n = d.items.length, x0 = 540 - (n * W + (n - 1) * GAP) / 2;
+const TogglesPiece = ({t, d, ep}: any) => {
+  const l = useEpisodeLayout(), wide = l.format === 'landscape', is34 = l.format === '3:4';
+  const portraitDesign = !wide && ep?.presentation === 'showcase';
+  const GAP = portraitDesign ? 32 : 40, n = d.items.length;
+  const W = portraitDesign ? 420 : wide ? Math.min(420, (l.primary.w - (n-1)*GAP)/n) : 320;
+  const H = is34 ? (portraitDesign ? 240 : 210) : portraitDesign ? 300 : wide ? 220 : 250;
+  const center = wide ? l.primary.x + l.primary.w/2 : 540;
+  const cy = wide ? l.primary.y + (d.y-460)/860*l.primary.h : is34 ? (portraitDesign ? 706+(d.y-860)/290*284 : Math.round(d.y*0.74)) : portraitDesign ? 940+(d.y-860)/290*370 : d.y;
+  const x0 = Math.round(center - (n * W + (n - 1) * GAP) / 2);
   return d.items.map((it: any, i: number) => {
     const at = d.at + i * 0.1;
     if (t < at) return null;
+    const enter = ease(t, at, 0.36);
     const em = it.emphAt != null ? snap(t, it.emphAt) : 0;
     const fg = mix(C.ink, '#FFFFFF', em);
     const on = it.flipAt != null ? (it.on ? 1 - snap(t, it.flipAt) : snap(t, it.flipAt)) : it.on ? 1 : 0;
     return (
-      <div key={i} style={{...CARD, left: x0 + i * (W + GAP), top: d.y - H / 2, width: W, height: H, background: mix('#FFFFFF', C.ink, em), ...popUp(t, at),
-        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 34}}>
-        <div style={{...T.heading, fontSize: 44, fontWeight: 600, color: fg}}>{it.label}</div>
+      <div key={i} style={{...CARD, left: x0 + i * (W + GAP), top: Math.round(cy - H / 2), width: W, height: H, background: mix('#FFFFFF', C.ink, em),
+        opacity: clamp01(enter * 1.8), transform: enter >= 0.999 ? undefined : `translateY(${(1 - enter) * 28}px) scale(${0.96 + 0.04 * enter})`,
+        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: is34 ? 26 : 34}}>
+        <div style={{...T.heading, fontSize: is34 ? 40 : 44, fontWeight: 600, color: fg}}>{it.label}</div>
         {it.type === 'check' ? (
           <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
             {[0, 1, 2].map((k) => (
@@ -265,12 +278,13 @@ const TerminalPiece = ({t, d}: any) => {
 // 整屏色块章节卡（借鉴 huashu-art-motion 动态文字语法，10-21 试行）：色块从下往上铺满（盖住章节栏），巨字砸进来，
 // 右下角一个描边大序号；out 时色块继续往上退走，露出下面的场景。只用在章节切换，和浅纸色底形成反差
 const FloodPiece = ({t, d}: any) => {
+  const l = useEpisodeLayout();
   if (t < d.at) return null;
   const inP = ease(t, d.at, 0.32, Easing.out(Easing.exp)), outP = d.out != null ? ease(t, d.out, 0.28, Easing.in(Easing.cubic)) : 0;
   if (outP >= 1) return null;
-  const top = 1920 * (1 - inP) - 1920 * outP, slam = Math.min(1, springIn(t, d.at + 0.18)), fg = d.fg ?? '#FFFFFF';
+  const top = l.height * (1 - inP) - l.height * outP, slam = Math.min(1, springIn(t, d.at + 0.18)), fg = d.fg ?? '#FFFFFF';
   return (
-    <div style={{position: 'absolute', left: 0, top, width: 1080, height: 1920, background: d.color ?? C.voice, overflow: 'hidden'}}>
+    <div style={{position: 'absolute', left: 0, top, width: l.width, height: l.height, background: d.color ?? C.voice, overflow: 'hidden'}}>
       {d.no ? <div style={{position: 'absolute', right: -30, bottom: 120, ...T.display, fontSize: 760, fontWeight: 800, lineHeight: 1, color: 'transparent', WebkitTextStroke: `6px ${fg}`, opacity: 0.22 * clamp01((t - d.at - 0.2) / 0.3)}}>{d.no}</div> : null}
       {d.kicker ? <div style={{position: 'absolute', left: 90, top: 560, ...T.heading, fontSize: 52, fontWeight: 700, color: fg, opacity: clamp01((t - d.at - 0.15) / 0.2), letterSpacing: 4}}>{d.kicker}</div> : null}
       <div style={{position: 'absolute', left: 80, top: 640, ...T.display, fontSize: d.size ?? 260, fontWeight: 800, lineHeight: 1.05, color: fg, whiteSpace: 'nowrap',
@@ -878,6 +892,7 @@ const PIECES: Record<string, React.FC<any>> = {prompt: PromptPiece, flow: FlowPi
 export const Scene: React.FC<TemplateProps> = ({t, shot, ep}) => (
   <>
     {(shot.props.pieces as any[]).map((d, i) => {
+      if (ep.presentation === 'showcase' && shot.props.editorial && d.kind === 'text') return null;
       const P = PIECES[d.kind];
       return P ? <P key={i} t={t} d={d} ep={ep} /> : null;
     })}
